@@ -3,139 +3,157 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Festivals</title>
-  <meta name="description" content="A festival guide page for the Philippines travel blog featuring Luzon, Visayas, and Mindanao celebrations.">
+  <title>Festivals | Welcome to the Philippines</title>
+  <meta name="description" content="Discover major Philippine festivals across Luzon, Visayas, and Mindanao.">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#4CAF50">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body data-page="festivals">
-  <header class="site-header">
-    <div class="container nav-shell">
-      <a class="brand" href="index.html">Welcome to the Philippines!</a>
-      <nav class="site-nav" aria-label="Primary navigation">
-        <a href="index.html">Home</a>
-        <a href="luzon.html">Luzon</a>
-        <a href="visayas.html">Visayas</a>
-        <a href="mindanao.html">Mindanao</a>
-        <a class="active" href="festivals.html">Festivals</a>
-      </nav>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">Welcome to the Philippines!</a>
+      <button class="navbar-toggler border-white" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-semibold">
+          <li class="nav-item"><a class="nav-link px-3" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="luzon/luzon.html">Luzon</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="visayas/visayas.html">Visayas</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="mindanao/mindanao.html">Mindanao</a></li>
+          <li class="nav-item"><a class="nav-link px-3 active" aria-current="page" href="festivals.html">Festivals</a></li>
+        </ul>
+      </div>
     </div>
-  </header>
+  </nav>
+
+  <section class="hero-section festival-hero d-flex align-items-center">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content text-white">
+      <div class="row">
+        <div class="col-lg-8">
+          <span class="festival-kicker">Celebrate the islands</span>
+          <h1 class="display-4 hero-title mb-3">Philippine Festivals</h1>
+          <p class="lead fw-medium mb-4">A colorful list of famous celebrations across Luzon, Visayas, and Mindanao, from flower parades to street-dance spectacles and harvest traditions.</p>
+          <div class="d-flex flex-wrap gap-2 festival-tags">
+            <span class="badge rounded-pill text-bg-light">Culture</span>
+            <span class="badge rounded-pill text-bg-light">Food</span>
+            <span class="badge rounded-pill text-bg-light">Street Dance</span>
+            <span class="badge rounded-pill text-bg-light">Tradition</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <main>
-    <section class="hero hero--island hero--festivals">
-      <div class="container hero__content hero__content--narrow">
-        <a class="back-link" href="index.html">← Back to Home</a>
-        <div class="eyebrow">Festival Guide</div>
-        <h1>Philippine festivals</h1>
-        <p>Explore colorful celebrations from Luzon, Visayas, and Mindanao. This page works as a festival list, trip-planning guide, or event inspiration section for your travel website.</p>
-        <div class="status-row">
-          <div class="status-pill" id="phTimeStatus">Loading Philippine time...</div>
-          <div class="status-pill" id="phThemeStatus">Checking day and night cycle...</div>
+    <section class="festival-section py-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <article class="card festival-card h-100 shadow-sm border-0">
+              <img src="luzon/img/baguio.jpg" class="card-img-top festival-card-img" alt="Baguio scenery for Luzon festivals">
+              <div class="card-body p-4">
+                <span class="festival-region festival-region-luzon">Luzon</span>
+                <h2 class="h3 mt-3 mb-3">Festivals in Luzon</h2>
+                <p class="text-secondary">Luzon blends flower festivals, harvest displays, and lantern traditions with heritage towns, mountain destinations, and city celebrations.</p>
+                <ul class="festival-list ps-3 mb-0">
+                  <li><strong>Panagbenga Festival</strong> in Baguio for flower floats and street dancing.</li>
+                  <li><strong>Pahiyas Festival</strong> in Lucban for colorful harvest-inspired house decorations.</li>
+                  <li><strong>Giant Lantern Festival</strong> in Pampanga for dazzling handcrafted parol displays.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-lg-4">
+            <article class="card festival-card h-100 shadow-sm border-0">
+              <img src="visayas/img/visayas.webp" class="card-img-top festival-card-img" alt="Visayas scenery for Visayas festivals">
+              <div class="card-body p-4">
+                <span class="festival-region festival-region-visayas">Visayas</span>
+                <h2 class="h3 mt-3 mb-3">Festivals in Visayas</h2>
+                <p class="text-secondary">The Visayas is known for high-energy celebrations with drumbeats, masks, processions, and huge crowds gathering around historic city centers.</p>
+                <ul class="festival-list ps-3 mb-0">
+                  <li><strong>Sinulog Festival</strong> in Cebu for grand street dances and religious devotion.</li>
+                  <li><strong>Dinagyang Festival</strong> in Iloilo for performance-heavy competitions and vibrant costumes.</li>
+                  <li><strong>MassKara Festival</strong> in Bacolod for smiling masks, music, and lively parades.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-lg-4">
+            <article class="card festival-card h-100 shadow-sm border-0">
+              <img src="mindanao/img/mindanao.jpg" class="card-img-top festival-card-img" alt="Mindanao scenery for Mindanao festivals">
+              <div class="card-body p-4">
+                <span class="festival-region festival-region-mindanao">Mindanao</span>
+                <h2 class="h3 mt-3 mb-3">Festivals in Mindanao</h2>
+                <p class="text-secondary">Mindanao festivals often highlight indigenous heritage, thanksgiving traditions, fruit harvests, and the region's strong community spirit.</p>
+                <ul class="festival-list ps-3 mb-0">
+                  <li><strong>Kadayawan Festival</strong> in Davao for culture, harvest abundance, and thanksgiving.</li>
+                  <li><strong>Lanzones Festival</strong> in Camiguin for island celebrations inspired by the famous fruit.</li>
+                  <li><strong>Kaamulan Festival</strong> in Bukidnon for tribal gatherings and cultural showcases.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="destinations-section">
+    <section class="festival-section festival-section-alt py-5">
       <div class="container">
-        <div class="section-heading section-heading--stacked">
-          <div>
-            <p class="section-kicker">Festival highlights</p>
-            <h2>Celebrations by island group</h2>
-            <p class="section-copy">Use this page to feature well-known festivals and help visitors discover where the biggest celebrations happen across the country.</p>
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-7">
+            <div class="festival-info-box h-100 shadow-sm">
+              <h2 class="h3 mb-3">Festival season at a glance</h2>
+              <p class="text-secondary mb-4">Each island group has its own rhythm of celebration. From early-year street dances to harvest festivals later in the year, visitors can plan trips around the events that match the kind of experience they want.</p>
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <div class="mini-festival-card h-100">
+                    <h3 class="h5">Luzon</h3>
+                    <p class="mb-0"><strong>Best months:</strong> February to December<br><strong>Known for:</strong> flowers, harvest décor, lantern shows</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="mini-festival-card h-100">
+                    <h3 class="h5">Visayas</h3>
+                    <p class="mb-0"><strong>Best months:</strong> January to October<br><strong>Known for:</strong> street dancing, masks, drumbeats</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="mini-festival-card h-100">
+                    <h3 class="h5">Mindanao</h3>
+                    <p class="mb-0"><strong>Best months:</strong> February to October<br><strong>Known for:</strong> thanksgiving rites, fruit harvests, tribal culture</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-
-        <div class="agency-grid">
-          <article class="agency-card festival-card">
-            <div class="destination-card__media"><img src="img/baguio.jpg" alt="Baguio festival atmosphere" loading="lazy"></div>
-            <div class="agency-card__body">
-              <div class="agency-card__top">
-                <h3>Luzon festivals</h3>
-                <span class="agency-badge">North to South</span>
-              </div>
-              <p>Luzon mixes flower festivals, harvest celebrations, and giant lantern traditions with a blend of heritage, food, and city energy.</p>
-              <ul class="feature-list festival-list">
-                <li><strong>Panagbenga</strong> – Baguio's famous flower festival known for floats, blooms, and street dancing.</li>
-                <li><strong>Pahiyas</strong> – A colorful Lucban celebration where homes are decorated with harvest-inspired designs.</li>
-                <li><strong>Giant Lantern Festival</strong> – Pampanga's bright holiday showcase of intricate parol craftsmanship.</li>
+          <div class="col-lg-5">
+            <div class="festival-info-box h-100 shadow-sm">
+              <h2 class="h3 mb-3">Travel tips for festival trips</h2>
+              <ul class="festival-list ps-3 mb-0">
+                <li>Book transportation and accommodations early because festival dates attract large crowds.</li>
+                <li>Wear light and comfortable clothes for long walks, parades, and outdoor activities.</li>
+                <li>Bring cash, water, and a power bank since busy festival areas can be crowded all day.</li>
+                <li>Respect local customs and road closures, especially during religious processions and cultural events.</li>
               </ul>
             </div>
-          </article>
-
-          <article class="agency-card festival-card">
-            <div class="destination-card__media"><img src="img/cebu.jpg" alt="Cebu celebration scene" loading="lazy"></div>
-            <div class="agency-card__body">
-              <div class="agency-card__top">
-                <h3>Visayas festivals</h3>
-                <span class="agency-badge">Island Celebrations</span>
-              </div>
-              <p>The Visayas is packed with high-energy street festivals, bold costumes, drumbeats, and celebrations that draw huge crowds every year.</p>
-              <ul class="feature-list festival-list">
-                <li><strong>Sinulog</strong> – Cebu's iconic festival filled with dances, chants, and grand processions.</li>
-                <li><strong>Dinagyang</strong> – Iloilo's performance-heavy celebration known for striking costumes and rhythmic street showcases.</li>
-                <li><strong>MassKara</strong> – Bacolod's smiling-mask festival celebrated with music, dancing, and colorful parades.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="agency-card festival-card">
-            <div class="destination-card__media"><img src="img/siargao.jpg" alt="Mindanao travel scene" loading="lazy"></div>
-            <div class="agency-card__body">
-              <div class="agency-card__top">
-                <h3>Mindanao festivals</h3>
-                <span class="agency-badge">Culture and Nature</span>
-              </div>
-              <p>Mindanao festivals often highlight indigenous culture, harvest abundance, and the region's strong connection to music, community, and craft.</p>
-              <ul class="feature-list festival-list">
-                <li><strong>Kadayawan</strong> – Davao's well-known thanksgiving festival celebrating culture, produce, and community pride.</li>
-                <li><strong>Lanzones Festival</strong> – Camiguin's lively island celebration inspired by its famous sweet lanzones fruit.</li>
-                <li><strong>Kaamulan</strong> – Bukidnon's gathering of indigenous traditions, performances, and heritage showcases.</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-
-        <div class="legend-grid services-grid">
-          <article class="legend-card">
-            <h3>What to feature here</h3>
-            <p>Add festival photos, short background stories, travel tips, and suggested destinations nearby so the page feels useful for visitors planning around events.</p>
-          </article>
-          <article class="legend-card">
-            <h3>Suggested layout use</h3>
-            <p>This can act as a festival directory, a seasonal-events page, or a companion page for the island sections in your tourism website.</p>
-          </article>
-          <article class="legend-card">
-            <h3>Good add-ons later</h3>
-            <p>You can later add month filters, event calendars, location tags, ticket links, or festival-specific galleries if your project needs more detail.</p>
-          </article>
-        </div>
-
-        <div class="inquiry-shell">
-          <div class="inquiry-copy">
-            <p class="section-kicker">Quick festival list</p>
-            <h2>Easy reference</h2>
-            <p>This section gives visitors a fast scan of what festival belongs to which island group.</p>
-          </div>
-
-          <div class="festival-summary-grid">
-            <article class="legend-card">
-              <h3>Luzon</h3>
-              <p>Panagbenga, Pahiyas, Giant Lantern Festival</p>
-            </article>
-            <article class="legend-card">
-              <h3>Visayas</h3>
-              <p>Sinulog, Dinagyang, MassKara</p>
-            </article>
-            <article class="legend-card">
-              <h3>Mindanao</h3>
-              <p>Kadayawan, Lanzones Festival, Kaamulan</p>
-            </article>
           </div>
         </div>
       </div>
     </section>
   </main>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmxc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

@@ -1,936 +1,411 @@
-:root {
-  --bg: #d8ecff;
-  --bg-2: #eff7ff;
-  --card: rgba(255, 255, 255, 0.86);
-  --card-strong: rgba(255, 255, 255, 0.96);
-  --text: #0f172a;
-  --muted: #475569;
-  --line: rgba(15, 23, 42, 0.12);
-  --accent: #0ea5e9;
-  --accent-strong: #0284c7;
-  --header: rgba(15, 23, 42, 0.74);
-  --hero-overlay: linear-gradient(180deg, rgba(6, 78, 120, 0.28), rgba(15, 23, 42, 0.48));
-  --shadow: 0 20px 50px rgba(15, 23, 42, 0.16);
-  --hotspot: rgba(34, 211, 238, 0.34);
-  --hotspot-border: rgba(255, 255, 255, 0.98);
-  --hotspot-glow: rgba(34, 211, 238, 0.55);
-  --popup-bg: rgba(255, 255, 255, 0.96);
-}
+/*! HTML5 Boilerplate v9.0.0-RC1 | MIT License | https://html5boilerplate.com/ */
 
-body[data-theme="night"] {
-  --bg: #061223;
-  --bg-2: #0f2240;
-  --card: rgba(15, 23, 42, 0.74);
-  --card-strong: rgba(15, 23, 42, 0.9);
-  --text: #e2e8f0;
-  --muted: #cbd5e1;
-  --line: rgba(255, 255, 255, 0.14);
-  --accent: #7dd3fc;
-  --accent-strong: #38bdf8;
-  --header: rgba(2, 6, 23, 0.82);
-  --hero-overlay: linear-gradient(180deg, rgba(2, 6, 23, 0.5), rgba(2, 6, 23, 0.72));
-  --shadow: 0 24px 65px rgba(2, 6, 23, 0.45);
-  --hotspot: rgba(125, 211, 252, 0.28);
-  --hotspot-border: rgba(186, 230, 253, 0.96);
-  --hotspot-glow: rgba(125, 211, 252, 0.5);
-  --popup-bg: rgba(15, 23, 42, 0.94);
-}
+/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
 
-* {
-  box-sizing: border-box;
-}
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
 
 html {
-  font-size: 16px;
-  scroll-behavior: smooth;
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
 }
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  color: var(--text);
-  font-family: Arial, Helvetica, sans-serif;
-  background:
-    radial-gradient(circle at top, rgba(255,255,255,0.55), transparent 36%),
-    linear-gradient(180deg, var(--bg), var(--bg-2));
-  transition: background 0.45s ease, color 0.45s ease;
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
 }
 
-img {
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
   display: block;
-  max-width: 100%;
-}
-
-button {
-  font: inherit;
-}
-
-.container {
-  width: min(1120px, calc(100% - 2rem));
-  margin: 0 auto;
-}
-
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 30;
-  backdrop-filter: blur(16px);
-  background: var(--header);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.nav-shell {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  padding: 0.95rem 0;
-}
-
-.brand {
-  font-size: 1rem;
-  font-weight: 700;
-  color: #ffffff;
-}
-
-.site-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-}
-
-.site-nav a {
-  color: rgba(255, 255, 255, 0.88);
-  padding: 0.55rem 0.9rem;
-  border-radius: 999px;
-  font-size: 0.95rem;
-  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
-}
-
-.site-nav a:hover,
-.site-nav a:focus-visible,
-.site-nav a.active {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.14);
-  transform: translateY(-1px);
-}
-
-.hero {
-  position: relative;
-  overflow: hidden;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--hero-overlay);
-}
-
-.hero--home {
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)),
-    linear-gradient(130deg, #0ea5e9, #2563eb 38%, #10b981 100%);
-}
-
-.hero--luzon {
-  background-image: linear-gradient(140deg, rgba(15,118,110,0.35), rgba(14,165,233,0.25) 52%, rgba(147,197,253,0.22)), url("../img/luzon-hero.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
-.hero--visayas {
-  background-image: linear-gradient(140deg, rgba(14,165,233,0.22), rgba(34,197,94,0.2) 52%, rgba(253,230,138,0.14)), url("../img/visayas-hero.png");
-  background-size: cover;
-  background-position: center;
-}
-
-.hero--mindanao {
-  background-image: linear-gradient(140deg, rgba(22,163,74,0.22), rgba(14,165,233,0.18) 46%, rgba(251,113,133,0.12)), url("../img/mindanao-hero.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
-.hero--agencies {
-  background-image: linear-gradient(140deg, rgba(37, 99, 235, 0.28), rgba(14, 165, 233, 0.18) 48%, rgba(16, 185, 129, 0.16)), url("../img/philippines-map-clean.png");
-  background-size: cover;
-  background-position: center;
-}
-
-.hero__content {
-  position: relative;
-  z-index: 1;
-  padding: 5.5rem 0 5rem;
-  color: #ffffff;
-}
-
-.hero--island {
-  min-height: 430px;
-  background-repeat: no-repeat;
-}
-
-.hero__content--narrow {
-  max-width: 760px;
-}
-
-.eyebrow {
-  display: inline-flex;
-  margin-bottom: 0.9rem;
-  padding: 0.45rem 0.8rem;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.14);
-  font-size: 0.9rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.hero h1 {
-  margin: 0 0 0.75rem;
-  font-size: clamp(2.8rem, 7vw, 5rem);
-  line-height: 0.95;
-}
-
-.hero p {
-  max-width: 720px;
-  margin: 0;
-  font-size: clamp(1rem, 2.4vw, 1.2rem);
-  line-height: 1.65;
-  color: rgba(255, 255, 255, 0.92);
-}
-
-.back-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-  color: rgba(255, 255, 255, 0.95);
-  font-weight: 700;
-}
-
-.status-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.7rem;
-  margin-top: 1.5rem;
-}
-
-.status-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  padding: 0.75rem 1rem;
-  border-radius: 999px;
-  background: var(--card-strong);
-  color: var(--text);
-  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.1);
-  font-size: 0.95rem;
-  font-weight: 700;
-}
-
-.map-section,
-.destinations-section {
-  padding: 3.25rem 0 4rem;
-}
-
-.section-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 1rem;
-  margin-bottom: 1.4rem;
-}
-
-.section-heading--stacked {
-  align-items: center;
-}
-
-.section-kicker {
-  margin: 0 0 0.35rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.8rem;
-  color: var(--accent-strong);
-  font-weight: 700;
-}
-
-.section-heading h2 {
-  margin: 0;
-  font-size: clamp(1.85rem, 4vw, 2.7rem);
-}
-
-.section-copy {
-  margin: 0.55rem 0 0;
-  max-width: 700px;
-  color: var(--muted);
-  line-height: 1.7;
-}
-
-.map-controls {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.map-control {
-  min-width: 48px;
-  height: 48px;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  background: var(--card-strong);
-  color: var(--text);
-  cursor: pointer;
-  box-shadow: var(--shadow);
-  transition: transform 0.2s ease, border-color 0.2s ease;
-}
-
-.map-control:hover,
-.map-control:focus-visible {
-  transform: translateY(-1px);
-  border-color: var(--accent);
-}
-
-.map-control--wide {
-  min-width: 82px;
-}
-
-.map-card {
-  border-radius: 28px;
-  padding: 1rem;
-  background: var(--card);
-  box-shadow: var(--shadow);
-  border: 1px solid var(--line);
-}
-
-.map-stage {
-  position: relative;
-  overflow: hidden;
-  border-radius: 22px;
-  aspect-ratio: 781 / 1000;
-  background: linear-gradient(180deg, rgba(125, 211, 252, 0.45), rgba(224, 242, 254, 0.75));
-  cursor: grab;
-}
-
-.map-stage.dragging {
-  cursor: grabbing;
-}
-
-.map-sky,
-.map-stars,
-.map-glow {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.map-sky {
-  background: linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0));
-  transition: opacity 0.4s ease, background 0.4s ease;
-}
-
-.map-glow {
-  background: radial-gradient(circle at 20% 15%, rgba(255,255,255,0.48), transparent 20%),
-              radial-gradient(circle at 70% 78%, rgba(255,255,255,0.2), transparent 22%);
-  opacity: 1;
-  transition: opacity 0.4s ease;
-}
-
-.map-stars {
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  background-image:
-    radial-gradient(circle, rgba(255,255,255,0.88) 0 1.1px, transparent 1.3px),
-    radial-gradient(circle, rgba(255,255,255,0.65) 0 0.9px, transparent 1.2px),
-    radial-gradient(circle, rgba(255,255,255,0.55) 0 0.8px, transparent 1.1px);
-  background-size: 130px 130px, 180px 180px, 250px 250px;
-  background-position: 12px 18px, 40px 80px, 90px 28px;
-}
-
-body[data-theme="night"] .map-stage {
-  background: linear-gradient(180deg, rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.85));
-}
-
-body[data-theme="night"] .map-sky {
-  background: linear-gradient(180deg, rgba(15,23,42,0.16), rgba(2,6,23,0.42));
-}
-
-body[data-theme="night"] .map-glow {
-  opacity: 0.38;
-}
-
-body[data-theme="night"] .map-stars {
-  opacity: 1;
-}
-
-
-.map-transform {
-  position: absolute;
-  inset: 0;
-  transform-origin: center center;
-  transition: transform 0.22s ease;
-}
-
-.philippines-map {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  user-select: none;
-  -webkit-user-drag: none;
-  filter: saturate(1.02) contrast(1.01);
-}
-
-body[data-theme="night"] .philippines-map {
-  filter: brightness(0.72) saturate(0.92) contrast(1.03);
-}
-
-.map-overlay {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-}
-
-.svg-region {
-  cursor: pointer;
-  outline: none;
-}
-
-.svg-region path {
-  fill: rgba(255, 255, 255, 0.001);
-  stroke: rgba(255, 255, 255, 0.001);
-  stroke-width: 2.8;
-  vector-effect: non-scaling-stroke;
-  pointer-events: visiblePainted;
-  transition: fill 0.22s ease, stroke 0.22s ease, filter 0.22s ease, opacity 0.22s ease;
-}
-
-@keyframes islandPulse {
-  0% {
-    filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
-  }
-  100% {
-    filter: drop-shadow(0 0 12px var(--hotspot-glow)) drop-shadow(0 0 28px var(--hotspot-glow)) drop-shadow(0 14px 24px rgba(15, 23, 42, 0.32));
-  }
-}
-
-.map-stage[data-active="luzon"] .svg-region--luzon path,
-.map-stage[data-active="visayas"] .svg-region--visayas path,
-.map-stage[data-active="mindanao"] .svg-region--mindanao path,
-.svg-region:hover path,
-.svg-region:focus path,
-.svg-region:focus-visible path {
-  fill: var(--hotspot);
-  stroke: var(--hotspot-border);
-  opacity: 1;
-  animation: islandPulse 1.35s ease-in-out infinite alternate;
-}
-
-.island-chip {
-  position: absolute;
-  z-index: 4;
-  transform: translate(-50%, -50%);
-  padding: 0.55rem 0.85rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.92);
-  color: #0f172a;
-  font-weight: 800;
-  font-size: 0.92rem;
-  letter-spacing: 0.01em;
-  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.16);
-  pointer-events: none;
-}
-
-body[data-theme="night"] .island-chip {
-  background: rgba(15, 23, 42, 0.92);
-  color: #e2e8f0;
-}
-
-.island-chip--luzon {
-  left: 44%;
-  top: 28%;
-}
-
-.island-chip--visayas {
-  left: 54%;
-  top: 56%;
-}
-
-.island-chip--mindanao {
-  left: 62%;
-  top: 82%;
-}
-
-.island-popup {
-  position: absolute;
-  z-index: 5;
-  width: 320px;
-  max-width: calc(100% - 1.25rem);
-  padding: 0.95rem 1rem 1rem;
-  border-radius: 18px;
-  background: var(--popup-bg);
-  color: var(--text);
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow);
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(10px) scale(0.98);
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.island-popup--luzon {
-  left: 51%;
-  top: 12%;
-}
-
-.island-popup--visayas {
-  left: 38%;
-  top: 41%;
-}
-
-.island-popup--mindanao {
-  left: 39%;
-  top: 65%;
-}
-
-.island-popup strong {
-  display: block;
-  margin-bottom: 0.65rem;
-  font-size: 0.95rem;
-}
-
-.popup-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.65rem;
-}
-
-.popup-place {
-  display: block;
-  overflow: hidden;
-  border-radius: 14px;
-  border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.popup-place img {
-  width: 100%;
-  height: 74px;
-  object-fit: cover;
-}
-
-.popup-place span {
-  display: block;
-  padding: 0.45rem 0.55rem 0.5rem;
-  font-size: 0.77rem;
-  line-height: 1.3;
-  color: var(--text);
-  font-weight: 700;
-}
-
-.map-stage[data-active="luzon"] .island-popup--luzon,
-.map-stage[data-active="visayas"] .island-popup--visayas,
-.map-stage[data-active="mindanao"] .island-popup--mindanao {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-
-.legend-grid,
-.destination-grid {
-  display: grid;
-  gap: 1rem;
-  margin-top: 1.2rem;
-}
-
-.legend-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.destination-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.legend-card,
-.destination-card {
-  border-radius: 22px;
-  background: var(--card);
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow);
-}
-
-.legend-card {
-  padding: 1.2rem;
-}
-
-.destination-card {
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
-}
-
-.destination-card:hover,
-.destination-card:focus-within {
-  transform: translateY(-4px);
-  border-color: rgba(14, 165, 233, 0.4);
-  box-shadow: 0 24px 40px rgba(15, 23, 42, 0.2);
-}
-
-.destination-card__media {
-  aspect-ratio: 16 / 10;
-  overflow: hidden;
-  background: rgba(255,255,255,0.08);
-}
-
-.destination-card__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.destination-card__body {
-  padding: 1.1rem 1.2rem 1.25rem;
-}
-
-.legend-card h3,
-.destination-card h3 {
-  margin: 0 0 0.45rem;
-  font-size: 1.15rem;
-}
-
-.legend-card p,
-.destination-card p {
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.72;
-}
-
-
-
-.plan-banner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  margin: 1.3rem 0 1.25rem;
-  padding: 1.25rem 1.35rem;
-  border-radius: 22px;
-  background: linear-gradient(135deg, rgba(14, 165, 233, 0.12), rgba(16, 185, 129, 0.1));
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow);
-}
-
-.plan-banner h3 {
-  margin: 0 0 0.4rem;
-  font-size: 1.25rem;
-}
-
-.plan-banner p {
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.7;
-}
-
-.cta-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 48px;
-  padding: 0.8rem 1.15rem;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #0284c7, #0ea5e9);
-  color: #ffffff;
-  font-weight: 800;
-  box-shadow: 0 16px 28px rgba(2, 132, 199, 0.28);
-}
-
-.cta-link--button {
+  height: 1px;
   border: 0;
-  cursor: pointer;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
 }
 
-.agency-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
 }
 
-.agency-card {
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
   overflow: hidden;
-  border-radius: 22px;
-  background: var(--card);
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow);
-}
-
-.agency-card__body {
-  padding: 1.1rem 1.2rem 1.25rem;
-}
-
-.agency-card__top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 0.8rem;
-  margin-bottom: 0.7rem;
-}
-
-.agency-card__top h3 {
-  margin: 0;
-  font-size: 1.15rem;
-}
-
-.agency-badge {
-  display: inline-flex;
-  padding: 0.35rem 0.65rem;
-  border-radius: 999px;
-  background: rgba(14, 165, 233, 0.14);
-  color: var(--accent-strong);
-  font-size: 0.78rem;
-  font-weight: 800;
+  padding: 0;
+  position: absolute;
   white-space: nowrap;
+  width: 1px;
+  /* 1 */
 }
 
-.agency-card p {
-  margin: 0 0 0.8rem;
-  color: var(--muted);
-  line-height: 1.72;
-}
+/*
+ * Extends the .visually-hidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
 
-.feature-list {
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+  clip: auto;
+  height: auto;
   margin: 0;
-  padding-left: 1.1rem;
-  color: var(--text);
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
 }
 
-.feature-list li {
-  margin-bottom: 0.45rem;
-  line-height: 1.6;
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
 }
 
-.services-grid {
-  margin-top: 1rem;
+/*
+ * Clearfix: contain floats
+ *
+ * The use of `table` rather than `block` is only necessary if using
+ * `::before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  display: table;
 }
 
-.inquiry-shell {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 1.2rem;
-  margin-top: 1.3rem;
-  align-items: start;
+.clearfix::after {
+  clear: both;
 }
 
-.inquiry-copy,
-.inquiry-form {
-  border-radius: 22px;
-  background: var(--card);
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow);
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
 }
 
-.inquiry-copy {
-  padding: 1.4rem;
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
 }
 
-.inquiry-copy h2 {
-  margin: 0 0 0.55rem;
-  font-size: clamp(1.7rem, 3vw, 2.2rem);
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
 }
 
-.inquiry-copy p:last-child {
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.75;
+
+/* In your style.css */
+.navbar-custom {
+  background-color: #3bb143; 
+  z-index: 1030; /* 1030 is Bootstrap's default sticky-top z-index */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Adds a nice shadow when scrolling */
+}
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+  color: white;
+}
+.navbar-custom .nav-link:hover {
+  color: #e0e0e0;
 }
 
-.inquiry-form {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-  padding: 1.25rem;
+/* Hero Section */
+.hero-section {
+  /* Replace 'hero-bg.jpg' with your actual Palawan/El Nido image */
+  background: url('assets/hero-bg.jpg') no-repeat center center;
+  background-size: cover;
+  height: 70vh;
+  position: relative;
 }
-
-.inquiry-form label {
-  display: grid;
-  gap: 0.45rem;
+/* Dark overlay to make the white text pop */
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 1;
 }
-
-.inquiry-form span {
-  font-size: 0.92rem;
+.hero-content {
+  position: relative;
+  z-index: 2;
+  letter-spacing: 2px;
+}
+.hero-title {
   font-weight: 700;
+  letter-spacing: 5px;
 }
 
-.inquiry-form input,
-.inquiry-form select,
-.inquiry-form textarea {
-  width: 100%;
-  padding: 0.9rem 1rem;
-  border-radius: 14px;
-  border: 1px solid var(--line);
-  background: var(--card-strong);
-  color: var(--text);
+/* Map Section Background */
+.map-section {
+  background-color: #3ab1c8; /* Matches the light blue ocean background */
+  padding: 5rem 0;
 }
 
-.form-span-2 {
-  grid-column: 1 / -1;
+/* Interactive SVG Map Styling */
+.map-region path {
+  transition: fill 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+  stroke: rgba(255, 255, 255, 0.5); /* Adds the white outline/glow effect */
+  stroke-width: 8px;
 }
 
-.form-actions {
-  display: flex;
-  align-items: center;
-  gap: 0.9rem;
-  flex-wrap: wrap;
+.map-region text {
+  font-family: sans-serif;
+  pointer-events: none; /* Prevents text from interfering with hovering over the shape */
 }
 
-.form-note {
-  color: var(--muted);
-  font-size: 0.92rem;
+/* Hover effects for the specific island groups */
+.region-luzon path { fill: #8cc63f; }
+.region-luzon:hover path { fill: #a2db55; filter: drop-shadow(0 0 10px rgba(255,255,255,0.8)); }
+
+.region-visayas path { fill: #fbb03b; }
+.region-visayas:hover path { fill: #ffc460; filter: drop-shadow(0 0 10px rgba(255,255,255,0.8)); }
+
+.region-mindanao path { fill: #e03a11; }
+.region-mindanao:hover path { fill: #f35732; filter: drop-shadow(0 0 10px rgba(255,255,255,0.8)); }
+
+/* Festivals page */
+.festival-hero {
+  min-height: 62vh;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.35)),
+    url('../luzon/img/baguio.jpg') no-repeat center center;
+  background-size: cover;
 }
 
-
-@media (max-width: 920px) {
-  .section-heading,
-  .nav-shell {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .legend-grid,
-  .destination-grid,
-  .agency-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .inquiry-shell {
-    grid-template-columns: 1fr;
-  }
-
-  .plan-banner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-@media (max-width: 640px) {
-  .container {
-    width: min(100% - 1rem, 100%);
-  }
-
-  .hero__content {
-    padding: 4.4rem 0 3.8rem;
-  }
-
-  .map-card {
-    padding: 0.7rem;
-  }
-
-
-  .island-chip {
-    font-size: 0.82rem;
-    padding: 0.45rem 0.7rem;
-  }
-
-  .legend-grid,
-  .destination-grid,
-  .agency-grid,
-  .inquiry-form {
-    grid-template-columns: 1fr;
-  }
-
-  .island-popup {
-    width: min(260px, calc(100% - 1rem));
-  }
-
-  .island-popup--luzon {
-  left: 51%;
-  top: 12%;
-}
-
-  .island-popup--visayas {
-  left: 38%;
-  top: 41%;
-}
-
-  .island-popup--mindanao {
-  left: 39%;
-  top: 65%;
-}
-
-  .popup-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .popup-place img {
-    height: 88px;
-  }
-
-  .status-pill {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .map-controls {
-    width: 100%;
-    justify-content: flex-start;
-  }
-
-  .site-nav {
-    width: 100%;
-  }
-}
-
-
-.hero--festivals {
-  background-image: linear-gradient(120deg, rgba(8, 51, 68, 0.55), rgba(11, 18, 32, 0.45)), url('../img/visayas-hero.png');
-}
-
-.festival-card .destination-card__media img {
-  object-position: center;
-}
-
-.festival-list li strong {
-  color: #f8fafc;
-}
-
-.festival-summary-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-  width: 100%;
-}
-
-.redirect-shell {
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  padding: 2rem 1rem;
-}
-
-.redirect-card {
-  max-width: 38rem;
-  text-align: center;
-  background: rgba(10, 19, 42, 0.72);
-  border: 1px solid rgba(148, 163, 184, 0.22);
-  border-radius: 1.5rem;
-  padding: 2rem;
-  box-shadow: 0 20px 60px rgba(2, 6, 23, 0.35);
-}
-
-.redirect-card h1 {
+.festival-kicker {
+  display: inline-block;
   margin-bottom: 0.75rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-.redirect-card p {
-  margin-bottom: 1.25rem;
-  color: var(--muted-text, #cbd5e1);
+.festival-tags .badge {
+  padding: 0.7rem 1rem;
+  font-weight: 600;
 }
 
-@media (max-width: 720px) {
-  .festival-summary-grid {
-    grid-template-columns: 1fr;
+.festival-section {
+  background: #f7fbf8;
+}
+
+.festival-section-alt {
+  background: #eef7f1;
+}
+
+.festival-card {
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.festival-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.12) !important;
+}
+
+.festival-card-img {
+  height: 240px;
+  object-fit: cover;
+}
+
+.festival-region {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.festival-region-luzon { background: #3A93ED; }
+.festival-region-visayas { background: #d49113; }
+.festival-region-mindanao { background: #d65732; }
+
+.festival-list li {
+  margin-bottom: 0.85rem;
+  color: #4b5563;
+}
+
+.festival-info-box {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.mini-festival-card {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.9rem;
+  padding: 1.1rem;
+}
+
+@media (max-width: 767.98px) {
+  .festival-hero {
+    min-height: 52vh;
+  }
+
+  .festival-card-img {
+    height: 210px;
+  }
+
+  .festival-info-box {
+    padding: 1.35rem;
   }
 }
