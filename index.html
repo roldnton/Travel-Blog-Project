@@ -21,6 +21,7 @@
         <a href="luzon.html">Luzon</a>
         <a href="visayas.html">Visayas</a>
         <a href="mindanao.html">Mindanao</a>
+        <a href="festivals.html">Festivals</a>
       </nav>
     </div>
   </header>
@@ -53,6 +54,7 @@
           </div>
         </div>
 
+        
         <div class="map-card">
           <div class="map-stage" id="mapStage">
             <div class="map-sky"></div>
@@ -62,43 +64,72 @@
             <div class="map-transform" id="mapTransform">
               <img class="philippines-map" src="img/philippines-map-clean.png" alt="Map of the Philippines with the major island groups of Luzon, Visayas, and Mindanao.">
 
-              <a class="island-hotspot island-hotspot--luzon" href="luzon.html" aria-label="Open Luzon page">
-                <span class="island-label">Luzon</span>
-                <span class="island-popup" role="tooltip">
-                  <strong>Luzon ideas</strong>
-                  <span>Baguio</span>
-                  <span>Vigan</span>
-                  <span>Banaue Rice Terraces</span>
-                  <span>Hundred Islands</span>
-                  <span>Palawan</span>
-                </span>
-              </a>
+              <svg class="map-overlay" viewBox="0 0 781 1000" aria-label="Interactive Philippines map">
+                <a class="svg-region svg-region--luzon" href="luzon.html" data-region="luzon" aria-label="Open Luzon page">
+                  <path d="M 365 140 L 355 274 L 326 259 L 321 286 L 355 369 L 370 370 L 369 352 L 387 360 L 365 381 L 367 405 L 404 417 L 428 397 L 474 441 L 473 401 L 554 474 L 561 444 L 539 439 L 526 414 L 568 417 L 563 387 L 550 408 L 512 387 L 502 405 L 486 374 L 460 375 L 451 395 L 407 366 L 429 355 L 412 322 L 421 291 L 456 271 L 472 224 L 453 194 L 461 149 Z M 312 533 L 304 536 L 302 551 L 293 562 L 298 573 L 294 582 L 281 587 L 278 596 L 230 648 L 219 650 L 193 677 L 185 701 L 206 693 L 210 685 L 232 673 L 240 659 L 261 648 L 273 630 L 274 616 L 295 611 L 306 594 L 316 593 L 322 586 L 313 563 L 316 539 Z M 352 418 L 350 421 L 351 427 L 358 428 L 361 435 L 370 440 L 376 453 L 375 461 L 383 469 L 386 480 L 393 486 L 394 490 L 402 492 L 412 487 L 415 481 L 414 477 L 421 469 L 421 463 L 418 459 L 420 438 L 416 437 L 404 424 L 393 422 L 385 417 L 371 419 L 357 416 Z M 510 467 L 507 468 L 506 470 L 506 478 L 507 479 L 507 482 L 505 485 L 506 491 L 504 494 L 504 497 L 500 503 L 501 508 L 504 509 L 507 508 L 518 497 L 521 491 L 533 489 L 534 487 L 534 483 L 532 480 L 526 478 L 522 472 L 516 471 L 515 469 Z M 327 483 L 326 485 L 326 491 L 327 493 L 329 493 L 330 494 L 330 498 L 333 503 L 335 503 L 336 504 L 341 504 L 342 505 L 343 504 L 347 504 L 348 505 L 349 504 L 355 503 L 357 499 L 357 497 L 354 493 L 348 490 L 347 491 L 345 491 L 342 489 L 340 486 L 336 485 L 334 482 L 332 482 L 331 481 Z M 436 415 L 432 417 L 431 419 L 431 421 L 430 422 L 430 427 L 432 431 L 434 433 L 434 434 L 436 434 L 439 437 L 441 437 L 442 438 L 443 437 L 445 437 L 446 435 L 446 433 L 445 432 L 446 431 L 451 430 L 452 428 L 452 426 L 450 422 L 449 422 L 448 420 L 446 420 L 445 419 L 444 416 L 442 416 L 441 415 Z" />
+                </a>
 
-              <a class="island-hotspot island-hotspot--visayas" href="visayas.html" aria-label="Open Visayas page">
-                <span class="island-label">Visayas</span>
-                <span class="island-popup" role="tooltip">
-                  <strong>Visayas ideas</strong>
-                  <span>Boracay</span>
-                  <span>Cebu</span>
-                  <span>Chocolate Hills</span>
-                  <span>Kalanggaman</span>
-                  <span>Siquijor</span>
-                </span>
-              </a>
+                <a class="svg-region svg-region--visayas" href="visayas.html" data-region="visayas" aria-label="Open Visayas page">
+                  <path d="M 564 468 L 560 475 L 567 493 L 598 519 L 584 540 L 567 541 L 566 560 L 574 566 L 581 561 L 588 570 L 586 603 L 601 612 L 605 602 L 618 597 L 614 578 L 604 569 L 605 544 L 613 554 L 641 550 L 628 523 L 630 489 L 620 482 L 616 471 L 607 467 L 587 471 Z M 552 541 L 543 544 L 538 568 L 512 612 L 508 637 L 506 617 L 514 600 L 511 595 L 528 569 L 525 561 L 508 554 L 492 560 L 490 575 L 483 582 L 484 607 L 464 611 L 461 629 L 470 641 L 483 641 L 490 662 L 509 660 L 531 609 L 550 593 Z M 505 523 L 499 523 L 488 530 L 471 529 L 470 521 L 464 514 L 441 503 L 435 505 L 433 516 L 445 519 L 441 538 L 442 556 L 436 567 L 438 572 L 436 589 L 443 590 L 451 581 L 464 573 L 473 574 L 484 569 L 487 560 L 505 546 L 503 541 L 506 532 Z M 507 468 L 507 482 L 505 485 L 506 491 L 500 503 L 501 508 L 507 508 L 522 491 L 532 507 L 541 510 L 548 517 L 554 517 L 555 513 L 552 505 L 553 502 L 547 491 L 541 488 L 536 489 L 533 481 L 526 478 L 522 472 L 516 471 L 510 467 Z M 578 605 L 565 599 L 555 601 L 550 605 L 546 611 L 544 611 L 537 616 L 534 621 L 534 624 L 539 629 L 541 629 L 544 634 L 547 635 L 556 634 L 558 629 L 566 632 L 575 627 L 576 628 L 581 627 L 582 621 L 579 617 L 580 609 Z M 635 583 L 634 584 L 632 584 L 631 588 L 629 589 L 626 594 L 625 606 L 626 608 L 628 608 L 629 609 L 629 611 L 632 615 L 631 616 L 632 621 L 637 622 L 641 620 L 642 616 L 640 613 L 641 606 L 639 603 L 639 599 L 638 598 L 638 596 L 640 592 L 640 587 L 638 584 L 636 584 Z" />
+                </a>
 
-              <a class="island-hotspot island-hotspot--mindanao" href="mindanao.html" aria-label="Open Mindanao page">
-                <span class="island-label">Mindanao</span>
-                <span class="island-popup" role="tooltip">
-                  <strong>Mindanao ideas</strong>
-                  <span>Siargao</span>
-                  <span>Camiguin</span>
-                  <span>Samal Island</span>
-                  <span>Tinuy-an Falls</span>
-                  <span>Lake Sebu</span>
-                </span>
-              </a>
+                <a class="svg-region svg-region--mindanao" href="mindanao.html" data-region="mindanao" aria-label="Open Mindanao page">
+                  <path d="M 667 646 L 626 621 L 627 661 L 609 659 L 607 671 L 589 663 L 586 687 L 568 683 L 558 705 L 545 707 L 538 687 L 515 678 L 490 707 L 453 717 L 436 774 L 453 778 L 476 733 L 484 750 L 517 755 L 530 730 L 558 752 L 543 779 L 556 815 L 624 850 L 642 819 L 624 787 L 639 759 L 664 808 L 668 779 L 688 758 L 678 690 L 663 685 L 675 673 Z M 430 787 L 428 791 L 429 795 L 431 795 L 433 799 L 438 804 L 438 805 L 440 805 L 441 806 L 454 803 L 455 801 L 455 797 L 456 796 L 461 795 L 462 793 L 461 789 L 456 787 L 452 787 L 451 785 L 449 785 L 448 784 L 446 785 L 442 783 L 441 784 L 439 784 L 436 787 L 435 786 Z M 380 826 L 380 829 L 381 831 L 385 833 L 387 833 L 388 832 L 392 832 L 393 833 L 395 833 L 396 832 L 400 831 L 401 833 L 405 834 L 412 831 L 414 828 L 414 825 L 413 823 L 411 823 L 410 822 L 406 822 L 405 821 L 403 821 L 402 822 L 399 819 L 397 819 L 396 818 L 391 819 L 390 821 L 382 823 Z" />
+                </a>
+              </svg>
+            </div>
+
+            <span class="island-chip island-chip--luzon" aria-hidden="true">Luzon</span>
+            <span class="island-chip island-chip--visayas" aria-hidden="true">Visayas</span>
+            <span class="island-chip island-chip--mindanao" aria-hidden="true">Mindanao</span>
+
+            <div class="island-popup island-popup--luzon" role="tooltip" aria-hidden="true">
+              <strong>Luzon ideas</strong>
+              <span class="popup-grid">
+                <span class="popup-place"><img src="img/baguio.jpg" alt="Baguio thumbnail"><span>Baguio</span></span>
+                <span class="popup-place"><img src="img/vigan.jpg" alt="Vigan thumbnail"><span>Vigan</span></span>
+                <span class="popup-place"><img src="img/banaue.jpg" alt="Banaue Rice Terraces thumbnail"><span>Banaue</span></span>
+                <span class="popup-place"><img src="img/hundred-islands.jpg" alt="Hundred Islands thumbnail"><span>Hundred Islands</span></span>
+                <span class="popup-place"><img src="img/palawan.jpg" alt="Palawan thumbnail"><span>Palawan</span></span>
+                <span class="popup-place"><img src="img/la-union.jpg" alt="La Union thumbnail"><span>La Union</span></span>
+              </span>
+            </div>
+
+            <div class="island-popup island-popup--visayas" role="tooltip" aria-hidden="true">
+              <strong>Visayas ideas</strong>
+              <span class="popup-grid">
+                <span class="popup-place"><img src="img/boracay.jpg" alt="Boracay thumbnail"><span>Boracay</span></span>
+                <span class="popup-place"><img src="img/cebu.jpg" alt="Cebu thumbnail"><span>Cebu</span></span>
+                <span class="popup-place"><img src="img/chocolate-hills.png" alt="Chocolate Hills thumbnail"><span>Chocolate Hills</span></span>
+                <span class="popup-place"><img src="img/kalanggaman.jpg" alt="Kalanggaman thumbnail"><span>Kalanggaman</span></span>
+                <span class="popup-place"><img src="img/siquijor.jpg" alt="Siquijor thumbnail"><span>Siquijor</span></span>
+                <span class="popup-place"><img src="img/iloilo.jpg" alt="Iloilo thumbnail"><span>Iloilo</span></span>
+              </span>
+            </div>
+
+            <div class="island-popup island-popup--mindanao" role="tooltip" aria-hidden="true">
+              <strong>Mindanao ideas</strong>
+              <span class="popup-grid">
+                <span class="popup-place"><img src="img/siargao.jpg" alt="Siargao thumbnail"><span>Siargao</span></span>
+                <span class="popup-place"><img src="img/camiguin.jpg" alt="Camiguin thumbnail"><span>Camiguin</span></span>
+                <span class="popup-place"><img src="img/samal-island.jpg" alt="Samal Island thumbnail"><span>Samal Island</span></span>
+                <span class="popup-place"><img src="img/tinuyan-falls.jpg" alt="Tinuy-an Falls thumbnail"><span>Tinuy-an Falls</span></span>
+                <span class="popup-place"><img src="img/lake-sebu.jpg" alt="Lake Sebu thumbnail"><span>Lake Sebu</span></span>
+                <span class="popup-place"><img src="img/dahilayan.jpg" alt="Dahilayan thumbnail"><span>Dahilayan</span></span>
+              </span>
             </div>
           </div>
+        </div>
+
+
+
+        <div class="plan-banner">
+          <div>
+            <p class="section-kicker">Need help planning?</p>
+            <h3>Browse festivals and celebration highlights</h3>
+            <p>Open the festivals page for colorful celebrations, cultural highlights, and event inspiration.</p>
+          </div>
+          <a class="cta-link" href="festivals.html">Open Festivals Page</a>
         </div>
 
         <div class="legend-grid">

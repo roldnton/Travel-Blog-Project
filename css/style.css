@@ -11,8 +11,9 @@
   --header: rgba(15, 23, 42, 0.74);
   --hero-overlay: linear-gradient(180deg, rgba(6, 78, 120, 0.28), rgba(15, 23, 42, 0.48));
   --shadow: 0 20px 50px rgba(15, 23, 42, 0.16);
-  --hotspot: rgba(14, 165, 233, 0.28);
-  --hotspot-border: rgba(255, 255, 255, 0.95);
+  --hotspot: rgba(34, 211, 238, 0.34);
+  --hotspot-border: rgba(255, 255, 255, 0.98);
+  --hotspot-glow: rgba(34, 211, 238, 0.55);
   --popup-bg: rgba(255, 255, 255, 0.96);
 }
 
@@ -29,8 +30,9 @@ body[data-theme="night"] {
   --header: rgba(2, 6, 23, 0.82);
   --hero-overlay: linear-gradient(180deg, rgba(2, 6, 23, 0.5), rgba(2, 6, 23, 0.72));
   --shadow: 0 24px 65px rgba(2, 6, 23, 0.45);
-  --hotspot: rgba(125, 211, 252, 0.22);
-  --hotspot-border: rgba(186, 230, 253, 0.92);
+  --hotspot: rgba(125, 211, 252, 0.28);
+  --hotspot-border: rgba(186, 230, 253, 0.96);
+  --hotspot-glow: rgba(125, 211, 252, 0.5);
   --popup-bg: rgba(15, 23, 42, 0.94);
 }
 
@@ -137,15 +139,27 @@ button {
 }
 
 .hero--luzon {
-  background: linear-gradient(140deg, #0f766e, #0ea5e9 52%, #93c5fd);
+  background-image: linear-gradient(140deg, rgba(15,118,110,0.35), rgba(14,165,233,0.25) 52%, rgba(147,197,253,0.22)), url("../img/luzon-hero.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .hero--visayas {
-  background: linear-gradient(140deg, #0ea5e9, #22c55e 52%, #fde68a);
+  background-image: linear-gradient(140deg, rgba(14,165,233,0.22), rgba(34,197,94,0.2) 52%, rgba(253,230,138,0.14)), url("../img/visayas-hero.png");
+  background-size: cover;
+  background-position: center;
 }
 
 .hero--mindanao {
-  background: linear-gradient(140deg, #16a34a, #0ea5e9 46%, #fb7185);
+  background-image: linear-gradient(140deg, rgba(22,163,74,0.22), rgba(14,165,233,0.18) 46%, rgba(251,113,133,0.12)), url("../img/mindanao-hero.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero--agencies {
+  background-image: linear-gradient(140deg, rgba(37, 99, 235, 0.28), rgba(14, 165, 233, 0.18) 48%, rgba(16, 185, 129, 0.16)), url("../img/philippines-map-clean.png");
+  background-size: cover;
+  background-position: center;
 }
 
 .hero__content {
@@ -153,6 +167,11 @@ button {
   z-index: 1;
   padding: 5.5rem 0 5rem;
   color: #ffffff;
+}
+
+.hero--island {
+  min-height: 430px;
+  background-repeat: no-repeat;
 }
 
 .hero__content--narrow {
@@ -347,6 +366,7 @@ body[data-theme="night"] .map-stars {
   opacity: 1;
 }
 
+
 .map-transform {
   position: absolute;
   inset: 0;
@@ -367,65 +387,52 @@ body[data-theme="night"] .philippines-map {
   filter: brightness(0.72) saturate(0.92) contrast(1.03);
 }
 
-.island-hotspot {
-  position: absolute;
-  display: block;
-  border: 2px solid transparent;
-  border-radius: 20px;
-  background: transparent;
-  transition: transform 0.22s ease, background 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
-}
-
-.island-hotspot::before {
-  content: "";
+.map-overlay {
   position: absolute;
   inset: 0;
-  border-radius: 20px;
-  background: var(--hotspot);
-  opacity: 0;
-  transition: opacity 0.22s ease;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
 }
 
-.island-hotspot:hover,
-.island-hotspot:focus-visible {
-  transform: scale(1.02);
-  border-color: var(--hotspot-border);
-  box-shadow: 0 12px 34px rgba(15, 23, 42, 0.2);
+.svg-region {
+  cursor: pointer;
+  outline: none;
 }
 
-.island-hotspot:hover::before,
-.island-hotspot:focus-visible::before {
+.svg-region path {
+  fill: rgba(255, 255, 255, 0.001);
+  stroke: rgba(255, 255, 255, 0.001);
+  stroke-width: 2.8;
+  vector-effect: non-scaling-stroke;
+  pointer-events: visiblePainted;
+  transition: fill 0.22s ease, stroke 0.22s ease, filter 0.22s ease, opacity 0.22s ease;
+}
+
+@keyframes islandPulse {
+  0% {
+    filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+  }
+  100% {
+    filter: drop-shadow(0 0 12px var(--hotspot-glow)) drop-shadow(0 0 28px var(--hotspot-glow)) drop-shadow(0 14px 24px rgba(15, 23, 42, 0.32));
+  }
+}
+
+.map-stage[data-active="luzon"] .svg-region--luzon path,
+.map-stage[data-active="visayas"] .svg-region--visayas path,
+.map-stage[data-active="mindanao"] .svg-region--mindanao path,
+.svg-region:hover path,
+.svg-region:focus path,
+.svg-region:focus-visible path {
+  fill: var(--hotspot);
+  stroke: var(--hotspot-border);
   opacity: 1;
+  animation: islandPulse 1.35s ease-in-out infinite alternate;
 }
 
-.island-hotspot--luzon {
-  left: 30%;
-  top: 7%;
-  width: 31%;
-  height: 40%;
-  clip-path: polygon(38% 0%, 65% 8%, 69% 23%, 61% 31%, 66% 46%, 55% 57%, 61% 73%, 49% 96%, 27% 83%, 18% 58%, 9% 45%, 16% 28%, 31% 18%);
-}
-
-.island-hotspot--visayas {
-  left: 25%;
-  top: 40%;
-  width: 53%;
-  height: 29%;
-  clip-path: polygon(5% 62%, 15% 26%, 26% 15%, 39% 27%, 51% 9%, 62% 17%, 73% 11%, 92% 27%, 90% 55%, 80% 60%, 71% 77%, 57% 72%, 49% 93%, 34% 83%, 25% 68%, 14% 79%);
-}
-
-.island-hotspot--mindanao {
-  left: 41%;
-  top: 69%;
-  width: 38%;
-  height: 27%;
-  clip-path: polygon(28% 0%, 64% 6%, 90% 28%, 86% 53%, 100% 71%, 76% 95%, 45% 100%, 17% 83%, 0% 56%, 8% 27%);
-}
-
-.island-label {
+.island-chip {
   position: absolute;
-  left: 50%;
-  top: 50%;
+  z-index: 4;
   transform: translate(-50%, -50%);
   padding: 0.55rem 0.85rem;
   border-radius: 999px;
@@ -435,20 +442,35 @@ body[data-theme="night"] .philippines-map {
   font-size: 0.92rem;
   letter-spacing: 0.01em;
   box-shadow: 0 10px 28px rgba(15, 23, 42, 0.16);
+  pointer-events: none;
 }
 
-body[data-theme="night"] .island-label {
+body[data-theme="night"] .island-chip {
   background: rgba(15, 23, 42, 0.92);
   color: #e2e8f0;
 }
 
+.island-chip--luzon {
+  left: 44%;
+  top: 28%;
+}
+
+.island-chip--visayas {
+  left: 54%;
+  top: 56%;
+}
+
+.island-chip--mindanao {
+  left: 62%;
+  top: 82%;
+}
+
 .island-popup {
   position: absolute;
-  left: 50%;
-  bottom: calc(100% + 12px);
-  transform: translateX(-50%) translateY(8px);
-  min-width: 190px;
-  padding: 0.95rem 1rem;
+  z-index: 5;
+  width: 320px;
+  max-width: calc(100% - 1.25rem);
+  padding: 0.95rem 1rem 1rem;
   border-radius: 18px;
   background: var(--popup-bg);
   color: var(--text);
@@ -456,26 +478,65 @@ body[data-theme="night"] .island-label {
   box-shadow: var(--shadow);
   opacity: 0;
   pointer-events: none;
+  transform: translateY(10px) scale(0.98);
   transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.island-popup--luzon {
+  left: 51%;
+  top: 12%;
+}
+
+.island-popup--visayas {
+  left: 38%;
+  top: 41%;
+}
+
+.island-popup--mindanao {
+  left: 39%;
+  top: 65%;
 }
 
 .island-popup strong {
   display: block;
-  margin-bottom: 0.45rem;
+  margin-bottom: 0.65rem;
   font-size: 0.95rem;
 }
 
-.island-popup span {
-  display: block;
-  font-size: 0.88rem;
-  line-height: 1.6;
-  color: var(--muted);
+.popup-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
 }
 
-.island-hotspot:hover .island-popup,
-.island-hotspot:focus-visible .island-popup {
+.popup-place {
+  display: block;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.popup-place img {
+  width: 100%;
+  height: 74px;
+  object-fit: cover;
+}
+
+.popup-place span {
+  display: block;
+  padding: 0.45rem 0.55rem 0.5rem;
+  font-size: 0.77rem;
+  line-height: 1.3;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.map-stage[data-active="luzon"] .island-popup--luzon,
+.map-stage[data-active="visayas"] .island-popup--visayas,
+.map-stage[data-active="mindanao"] .island-popup--mindanao {
   opacity: 1;
-  transform: translateX(-50%) translateY(0);
+  transform: translateY(0) scale(1);
 }
 
 .legend-grid,
@@ -495,11 +556,44 @@ body[data-theme="night"] .island-label {
 
 .legend-card,
 .destination-card {
-  padding: 1.2rem;
   border-radius: 22px;
   background: var(--card);
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
+}
+
+.legend-card {
+  padding: 1.2rem;
+}
+
+.destination-card {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.destination-card:hover,
+.destination-card:focus-within {
+  transform: translateY(-4px);
+  border-color: rgba(14, 165, 233, 0.4);
+  box-shadow: 0 24px 40px rgba(15, 23, 42, 0.2);
+}
+
+.destination-card__media {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: rgba(255,255,255,0.08);
+}
+
+.destination-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.destination-card__body {
+  padding: 1.1rem 1.2rem 1.25rem;
 }
 
 .legend-card h3,
@@ -515,6 +609,189 @@ body[data-theme="night"] .island-label {
   line-height: 1.72;
 }
 
+
+
+.plan-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.3rem 0 1.25rem;
+  padding: 1.25rem 1.35rem;
+  border-radius: 22px;
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.12), rgba(16, 185, 129, 0.1));
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.plan-banner h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.25rem;
+}
+
+.plan-banner p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.cta-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.8rem 1.15rem;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #0284c7, #0ea5e9);
+  color: #ffffff;
+  font-weight: 800;
+  box-shadow: 0 16px 28px rgba(2, 132, 199, 0.28);
+}
+
+.cta-link--button {
+  border: 0;
+  cursor: pointer;
+}
+
+.agency-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.agency-card {
+  overflow: hidden;
+  border-radius: 22px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.agency-card__body {
+  padding: 1.1rem 1.2rem 1.25rem;
+}
+
+.agency-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin-bottom: 0.7rem;
+}
+
+.agency-card__top h3 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.agency-badge {
+  display: inline-flex;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(14, 165, 233, 0.14);
+  color: var(--accent-strong);
+  font-size: 0.78rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.agency-card p {
+  margin: 0 0 0.8rem;
+  color: var(--muted);
+  line-height: 1.72;
+}
+
+.feature-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--text);
+}
+
+.feature-list li {
+  margin-bottom: 0.45rem;
+  line-height: 1.6;
+}
+
+.services-grid {
+  margin-top: 1rem;
+}
+
+.inquiry-shell {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 1.2rem;
+  margin-top: 1.3rem;
+  align-items: start;
+}
+
+.inquiry-copy,
+.inquiry-form {
+  border-radius: 22px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.inquiry-copy {
+  padding: 1.4rem;
+}
+
+.inquiry-copy h2 {
+  margin: 0 0 0.55rem;
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
+}
+
+.inquiry-copy p:last-child {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.inquiry-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  padding: 1.25rem;
+}
+
+.inquiry-form label {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.inquiry-form span {
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.inquiry-form input,
+.inquiry-form select,
+.inquiry-form textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: var(--card-strong);
+  color: var(--text);
+}
+
+.form-span-2 {
+  grid-column: 1 / -1;
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.form-note {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+
 @media (max-width: 920px) {
   .section-heading,
   .nav-shell {
@@ -523,8 +800,18 @@ body[data-theme="night"] .island-label {
   }
 
   .legend-grid,
-  .destination-grid {
+  .destination-grid,
+  .agency-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .inquiry-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .plan-banner {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
@@ -542,14 +829,43 @@ body[data-theme="night"] .island-label {
   }
 
 
-  .island-label {
+  .island-chip {
     font-size: 0.82rem;
     padding: 0.45rem 0.7rem;
   }
 
   .legend-grid,
-  .destination-grid {
+  .destination-grid,
+  .agency-grid,
+  .inquiry-form {
     grid-template-columns: 1fr;
+  }
+
+  .island-popup {
+    width: min(260px, calc(100% - 1rem));
+  }
+
+  .island-popup--luzon {
+  left: 51%;
+  top: 12%;
+}
+
+  .island-popup--visayas {
+  left: 38%;
+  top: 41%;
+}
+
+  .island-popup--mindanao {
+  left: 39%;
+  top: 65%;
+}
+
+  .popup-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .popup-place img {
+    height: 88px;
   }
 
   .status-pill {
@@ -564,5 +880,57 @@ body[data-theme="night"] .island-label {
 
   .site-nav {
     width: 100%;
+  }
+}
+
+
+.hero--festivals {
+  background-image: linear-gradient(120deg, rgba(8, 51, 68, 0.55), rgba(11, 18, 32, 0.45)), url('../img/visayas-hero.png');
+}
+
+.festival-card .destination-card__media img {
+  object-position: center;
+}
+
+.festival-list li strong {
+  color: #f8fafc;
+}
+
+.festival-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  width: 100%;
+}
+
+.redirect-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 2rem 1rem;
+}
+
+.redirect-card {
+  max-width: 38rem;
+  text-align: center;
+  background: rgba(10, 19, 42, 0.72);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 20px 60px rgba(2, 6, 23, 0.35);
+}
+
+.redirect-card h1 {
+  margin-bottom: 0.75rem;
+}
+
+.redirect-card p {
+  margin-bottom: 1.25rem;
+  color: var(--muted-text, #cbd5e1);
+}
+
+@media (max-width: 720px) {
+  .festival-summary-grid {
+    grid-template-columns: 1fr;
   }
 }

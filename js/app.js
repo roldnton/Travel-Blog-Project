@@ -57,6 +57,54 @@
     return;
   }
 
+  const regionLinks = mapTransform.querySelectorAll('.svg-region');
+
+  function setActiveRegion(region) {
+    if (region) {
+      mapStage.setAttribute('data-active', region);
+    } else {
+      mapStage.removeAttribute('data-active');
+    }
+  }
+
+  regionLinks.forEach((link) => {
+    const region = link.getAttribute('data-region');
+    const activate = function () {
+      setActiveRegion(region);
+    };
+
+    const deactivate = function () {
+      setActiveRegion(null);
+    };
+
+    ['mouseenter', 'mouseover', 'pointerenter', 'focus'].forEach((eventName) => {
+      link.addEventListener(eventName, activate);
+    });
+
+    ['mouseleave', 'pointerleave', 'blur'].forEach((eventName) => {
+      link.addEventListener(eventName, deactivate);
+    });
+
+    link.querySelectorAll('path').forEach((path) => {
+      path.addEventListener('mouseenter', activate);
+      path.addEventListener('mouseover', activate);
+    });
+  });
+
+  mapStage.addEventListener('pointerleave', function () {
+    if (!isDragging) {
+      setActiveRegion(null);
+    }
+  });
+
+  mapStage.addEventListener('focusout', function () {
+    requestAnimationFrame(function () {
+      if (!mapStage.contains(document.activeElement)) {
+        setActiveRegion(null);
+      }
+    });
+  });
+
   let scale = 1;
   let offsetX = 0;
   let offsetY = 0;
