@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>Mindanao - Welcome to the Philippines</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/globals.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg custom-navbar sticky-top">
+      <div class="container">
+        <a class="navbar-brand text-white fw-bold" href="#">Welcome to the Philippines!</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link text-white" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">Luzon</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">Visayas</a></li>
+            <li class="nav-item"><a class="nav-link text-white fw-bold" href="#" aria-current="page">Mindanao</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">Events</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section class="hero-section position-relative">
+        <img class="hero-image w-100" src="img/mindanao.jpg" alt="Mindanao landscape" />
+        
+        <div class="hero-content position-absolute top-50 start-0 translate-middle-y ms-5 ps-5 text-white">
+          <a href="#" aria-label="Go back" class="d-inline-block mb-3">
+            <img class="go-back-icon" src="img/go-back.webp" alt="Go back" />
+          </a>
+          <h1 class="display-3 fw-bold">Mindanao</h1>
+          <p class="fs-4 mb-4">
+            The southernmost island group of the country, known for its diverse cultures and natural resources!
+          </p>
+          <a href="#mindanao-facts" class="btn custom-btn fw-bold" role="button">
+            Learn More
+          </a>
+        </div>
+      </section>
+
+      <section id="mindanao-facts" class="container mt-5 pt-4" aria-labelledby="mindanao-facts-heading">
+        <h2 class="mb-4 text-dark fw-bold" id="mindanao-facts-heading">Learn More About Mindanao!</h2>
+        <div class="card shadow-sm border-light">
+          <img src="img/mt-mayon.jpg" class="card-img-top custom-card-img" alt="Scenery of Mindanao" style="object-position: center top;"/>
+          <div class="card-body p-4">
+            <p class="info-text text-secondary mb-0">
+              text
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="container mt-5 pt-4" aria-label="Mindanao image carousel">
+        <div id="mindanaoCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+          <div class="carousel-inner rounded-4 shadow-sm overflow-hidden">
+            <div class="carousel-item active">
+              <img src="img/rizal-park.png" class="d-block w-100 custom-carousel-img" alt="Mindanao highlight 1" />
+              <div class="carousel-caption d-none d-md-block custom-carousel-caption rounded">
+                <h5 class="fw-bold">Rizal Park</h5>
+                <p>Fun Fact: This is known to be "Kilometer 0" of the Philippines, where Philippine roads begin!</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="img/rice-terraces.jpg" class="d-block w-100 custom-carousel-img" alt="Mindanao highlight 2" />
+              <div class="carousel-caption d-none d-md-block custom-carousel-caption rounded">
+                <h5 class="fw-bold">Banaue Rice Terraces</h5>
+                <p>The 2000-year-old, hand-carved mountain terraces in the Ifugao Province!</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="img/bangui-windmills.webp" class="d-block w-100 custom-carousel-img" alt="Mindanao highlight 3" style="object-position: center bottom"/>
+              <div class="carousel-caption d-none d-md-block custom-carousel-caption rounded">
+                <h5 class="fw-bold">Bangui Wind Farm</h5>
+                <p>Located in Ilocos Norte, this wind farm uses 20 units of 70-meter high wind turbines, spanning a 9km shoreline of Bangui Bay!</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#mindanaoCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#mindanaoCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="container mt-5 pt-4 mb-5" aria-label="Mindanao highlights">
+        <h2 class="mb-4 text-dark fw-bold" id="mindanao-cities-heading">Notable Cities to Visit in Mindanao!</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <article class="card h-100 shadow-sm border-light">
+              <img class="card-img-top custom-card-img" src="img/vigan.jpg" alt="Mindanao highlight image 1" />
+              <div class="card-body">
+                <h3 class="card-title h5 fw-bold text-dark">Vigan City</h3>
+                <p class="card-text text-secondary">
+                  Established in the 16th century, Vigan is the third oldest settlement established by the Spanish
+                  Colonizers, and is the best-preserved example of a planned Spanish colonial town in Asia.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-4">
+            <article class="card h-100 shadow-sm border-light">
+              <img class="card-img-top custom-card-img" src="img/tagaytay.webp" alt="Mindanao highlight image 2" />
+              <div class="card-body">
+                <h3 class="card-title h5 fw-bold text-dark">Tagaytay City</h3>
+                <p class="card-text text-secondary">
+                  Boasts outstanding scenery and cooler climate, this city overlooks Taal Lake in Batangas, and 
+                  provides a clear view of Taal Volcano Island from several vantage points in the city.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-4">
+            <article class="card h-100 shadow-sm border-light">
+              <img class="card-img-top custom-card-img" src="img/baguio.jpg" alt="Mindanao highlight image 3" />
+              <div class="card-body">
+                <h3 class="card-title h5 fw-bold text-dark">Baguio City</h3>
+                <p class="card-text text-secondary">
+                  Dubbed as the "City of Pines," Baguio City is popular in the summer for its unusually cool weather,
+                  as it has an approximate elevation of 1,500 meters above sea level. It is also the largest city in
+                  Benguet!
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
