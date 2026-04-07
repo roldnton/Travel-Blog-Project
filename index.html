@@ -1,32 +1,124 @@
 <!doctype html>
-<html class="no-js" lang="">
-
+<html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <title>Welcome to the Philippines</title>
+  <meta name="description" content="Interactive Philippines travel blog home page with clickable island groups, time-aware map theme, and tourist spot pop-ups.">
   <link rel="stylesheet" href="css/style.css">
-  <meta name="description" content="">
-
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icon.png">
-
   <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#fafafa">
+  <meta name="theme-color" content="#0f172a">
 </head>
+<body data-page="home">
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="index.html">Welcome to the Philippines!</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a class="active" href="index.html">Home</a>
+        <a href="luzon.html">Luzon</a>
+        <a href="visayas.html">Visayas</a>
+        <a href="mindanao.html">Mindanao</a>
+      </nav>
+    </div>
+  </header>
 
-<body>
+  <main>
+    <section class="hero hero--home">
+      <div class="container hero__content">
+        <div class="eyebrow">Interactive Island Explorer</div>
+        <h1>Mabuhay!</h1>
+        <p>Hover over a major island group to preview tourist spots, then click to open its page.</p>
+        <div class="status-row">
+          <div class="status-pill" id="phTimeStatus">Loading Philippine time...</div>
+          <div class="status-pill" id="phThemeStatus">Checking day and night cycle...</div>
+        </div>
+      </div>
+    </section>
 
-  <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
+    <section class="map-section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Home</p>
+            <h2>Philippine Islands</h2>
+            <p class="section-copy">This map shifts mood with Philippine time, includes simple pan and zoom controls, and reveals destination pop-ups when an island group is hovered or focused.</p>
+          </div>
+          <div class="map-controls" aria-label="Map controls">
+            <button type="button" class="map-control" id="zoomIn" aria-label="Zoom in">+</button>
+            <button type="button" class="map-control" id="zoomOut" aria-label="Zoom out">−</button>
+            <button type="button" class="map-control map-control--wide" id="resetView">Reset</button>
+          </div>
+        </div>
+
+        <div class="map-card">
+          <div class="map-stage" id="mapStage">
+            <div class="map-sky"></div>
+            <div class="map-stars" aria-hidden="true"></div>
+            <div class="map-glow" aria-hidden="true"></div>
+
+            <div class="map-transform" id="mapTransform">
+              <img class="philippines-map" src="img/philippines-map-clean.png" alt="Map of the Philippines with the major island groups of Luzon, Visayas, and Mindanao.">
+
+              <a class="island-hotspot island-hotspot--luzon" href="luzon.html" aria-label="Open Luzon page">
+                <span class="island-label">Luzon</span>
+                <span class="island-popup" role="tooltip">
+                  <strong>Luzon ideas</strong>
+                  <span>Baguio</span>
+                  <span>Vigan</span>
+                  <span>Banaue Rice Terraces</span>
+                  <span>Hundred Islands</span>
+                  <span>Palawan</span>
+                </span>
+              </a>
+
+              <a class="island-hotspot island-hotspot--visayas" href="visayas.html" aria-label="Open Visayas page">
+                <span class="island-label">Visayas</span>
+                <span class="island-popup" role="tooltip">
+                  <strong>Visayas ideas</strong>
+                  <span>Boracay</span>
+                  <span>Cebu</span>
+                  <span>Chocolate Hills</span>
+                  <span>Kalanggaman</span>
+                  <span>Siquijor</span>
+                </span>
+              </a>
+
+              <a class="island-hotspot island-hotspot--mindanao" href="mindanao.html" aria-label="Open Mindanao page">
+                <span class="island-label">Mindanao</span>
+                <span class="island-popup" role="tooltip">
+                  <strong>Mindanao ideas</strong>
+                  <span>Siargao</span>
+                  <span>Camiguin</span>
+                  <span>Samal Island</span>
+                  <span>Tinuy-an Falls</span>
+                  <span>Lake Sebu</span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="legend-grid">
+          <article class="legend-card">
+            <h3>How it works</h3>
+            <p>The highlighted island groups are clickable. Hover or tab to them to open a destination pop-up, then click to visit the section page for that island group.</p>
+          </article>
+          <article class="legend-card">
+            <h3>Map mood</h3>
+            <p>The page checks the current time in Asia/Manila. Daytime shows a brighter sky tint, while nighttime adds a darker overlay and star field for a map-at-night feel.</p>
+          </article>
+          <article class="legend-card">
+            <h3>Interaction</h3>
+            <p>Use the controls to zoom in, zoom out, or reset. You can also drag the map inside its frame on desktop for a more map-like browsing experience.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <script src="js/app.js"></script>
-
 </body>
-
 </html>
