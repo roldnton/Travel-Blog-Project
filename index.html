@@ -1,15 +1,14 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-  <link rel="stylesheet" href="css/style.css">
-  <meta name="description" content="">
+  <title>Landing Page</title>
+  <meta name="description" content="Explore the beauty of the Philippines' 7,641 islands!">
 
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
+  <meta property="og:title" content="Landing Page">
+  <meta property="og:type" content="website">
   <meta property="og:url" content="">
   <meta property="og:image" content="">
 
@@ -18,15 +17,115 @@
   <link rel="apple-touch-icon" href="icon.png">
 
   <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#fafafa">
+  <meta name="theme-color" content="#4CAF50">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-  <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Welcome to the Philippines!</a>
+      
+      <button class="navbar-toggler border-white" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-semibold">
+          <li class="nav-item"><a class="nav-link px-3" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="luzon.html">Luzon</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="visayas.html">Visayas</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="mindanao.html">Mindanao</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="events.html">Events</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section d-flex align-items-center justify-content-center text-center text-white">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <h1 class="display-3 hero-title mb-3">MABUHAY!</h1>
+      <p class="lead fw-medium mb-5">Explore the beauty of the Philippines' 7,641 islands!</p>
+      
+      <!-- Downward Chevron -->
+      <a href="#interactive-map" class="text-white d-inline-block">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE MAP SECTION -->
+  <section id="interactive-map" class="map-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8 text-center">
+          
+          <!-- SVG MAP CONTAINER -->
+          <!-- Replace the dummy <path> tags below with a real SVG path of the Philippines -->
+          <svg viewBox="0 0 1050 1550" class="w-100 h-auto d-block mx-auto" fill="none" xmlns="http://www.w3.org/2000/svg" style="max-width: 800px;">
+            
+            <!-- LUZON (Clickable Group) -->
+            <a href="luzon.html" class="map-region region-luzon">
+              <!-- Moved Luzon slightly right and down to give it breathing room -->
+              <g transform="translate(275, 50)">
+                <path d="M86.0974 91.0272C90.264 70.8606 103.597 25.9272 123.597 7.52722L155.597 0.527222L203.597 25.5272L269.597 46.5272V91.0272L285.597 134.027V219.527L246.097 267.527H214.097L203.597 306.527L214.097 374.527H258.597V417.027H189.097V440.027L178.597 463.527L246.097 479.527L269.597 451.027H317.597L360.097 474.027V511.527L374.597 500.527L417.097 531.027L397.597 545.027L442.097 591.527L452.597 629.027H408.097L337.097 566.527L317.597 577.027L303.097 609.527L285.597 577.027L258.597 591.527L237.597 577.027V531.027L193.097 511.527L162.597 545.027L86.0974 511.527V474.027L123.597 463.527L114.597 431.527L77.0974 451.027L25.5974 417.027L38.0974 351.027L0.597382 267.527L25.5974 242.527L61.0974 276.527L86.0974 257.027L61.0974 242.527V187.527L104.097 150.027L86.0974 91.0272Z" stroke="black"/>
+                <path d="M467.097 479.527L452.597 500.527L442.097 545.027L497.097 566.527L508.097 545.027L497.097 531.027V500.527L467.097 479.527Z" stroke="black"/>
+                <path d="M77.0974 602.19V566.527L114.597 591.527L178.597 582.606L203.597 609.527L189.097 641.527L203.597 694.527L139.597 712.527L77.0974 602.19Z" stroke="black"/>
+                <path d="M360.097 670.027L346.097 712.527L360.097 739.027L374.597 712.527H387.097L397.597 739.027H428.097L417.097 712.527L408.097 694.527L397.597 670.027H360.097Z" stroke="black"/>
+                <!-- Text adjusted to sit nicely in the middle of Luzon -->
+                <text x="150" y="300" fill="white" font-size="40" font-weight="bold">LUZON</text>
+              </g>
+            </a>
+
+            <!-- VISAYAS (Clickable Group) -->
+            <a href="visayas.html" class="map-region region-visayas">
+              <!-- Pushed down by 700 pixels to sit below Luzon -->
+              <g transform="translate(0, 700)">
+                <path d="M331.569 34.9146L299.569 47.4146L310.069 81.4146L290.569 95.4146L299.569 109.915H322.569L345.569 125.915L360.069 95.4146V57.9146H345.569L331.569 34.9146Z" stroke="black"/>
+                <path d="M233.569 161.415L260.069 145.415L278.069 161.415V205.915L310.069 228.915L299.569 255.915L233.569 292.915H208.569L174.569 269.915L208.569 244.915V219.915L233.569 205.915V161.415Z" stroke="black"/>
+                <path d="M183.569 355.415L174.569 292.915L125.069 314.415L107.069 355.415L89.5691 346.415L71.5691 365.915L36.0691 424.915L0.569061 442.415L11.0691 492.415L62.5691 453.415L107.069 424.915L134.069 376.915L183.569 355.415Z" stroke="black"/>
+                <path d="M506.069 57.9146L491.569 95.4146L506.069 125.915V184.415L491.569 228.915L518.569 255.915L573.569 205.915L588.069 175.415H620.069V125.915H598.569L573.569 81.4146L532.569 109.915V70.4146L506.069 57.9146Z" stroke="black"/>
+                <path d="M748.069 34.9146L758.569 95.4146L780.069 88.4146L801.569 102.415L792.569 125.915H748.069V175.415L773.069 184.415H807.069L817.569 145.415L830.069 175.415H863.569L853.069 161.415L872.569 145.415L853.069 109.915V24.4146L807.069 0.914551L792.569 34.9146L773.069 0.914551L748.069 34.9146Z" stroke="black"/>
+                <path d="M573.569 269.915H588.069L554.069 303.915V355.415L588.069 376.915L620.069 365.915V323.415H637.569L664.569 219.915L637.569 195.415L573.569 244.915V269.915Z" stroke="black"/>
+                <path d="M678.569 323.415L664.569 365.915L687.569 376.915L792.569 303.915L728.569 269.915L678.569 323.415Z" stroke="black"/>
+                <path d="M807.069 303.915L792.569 255.915L801.569 244.915H817.569L828.069 219.915L844.069 244.915H863.569L853.069 284.415H828.069L807.069 303.915Z" stroke="black"/>
+                <path d="M915.569 205.915L901.069 228.915L915.569 303.915L940.569 292.915L928.069 255.915L940.569 228.915L915.569 205.915Z" stroke="black"/>
+                <!-- Text adjusted for Visayas -->
+                <text x="750" y="250" fill="white" font-size="40" font-weight="bold">VISAYAS</text>
+              </g>
+            </a>
+
+            <!-- MINDANAO (Clickable Group) -->
+            <a href="mindanao.html" class="map-region region-mindanao">
+              <!-- Pushed down by 1050 pixels to sit at the bottom -->
+              <g transform="translate(500, 1050)">
+                <path d="M198.193 97L246.193 155.5H262.193V97L290.693 70L310.193 97L331.693 70L352.193 61.5L367.693 76L370.693 0.5H404.693L416.193 34.5L442.193 20L462.693 70L444.693 97L466.693 114.5H484.193L495.693 140V205L516.193 220L523.193 261.5L488.193 354H451.193V295.5C445.36 287.167 434.093 270.9 435.693 272.5C437.293 274.1 425.36 297.5 419.193 309L398.193 334L424.193 338.5V434L386.193 455L354.193 440.5V415.5L272.693 409C264.027 391.5 246.693 356 246.693 354C246.693 352 246.693 282.5 246.693 248L211.693 216.5L199.193 228.5L165.193 237.5L144.193 228.5L150.693 261.5L128.693 282.5L107.693 237.5H91.1934L70.1934 356.5L29.6934 370L0.693359 326.5L26.1934 309.5V248L79.1934 170L107.693 167.5V131H144.193L198.193 97Z" stroke="black"/>
+                <!-- Text adjusted for Mindanao -->
+                <text x="200" y="250" fill="white" font-size="40" font-weight="bold">MINDANAO</text>
+              </g>
+            </a>
+
+          </svg>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap 5 JS Bundle (includes Popper for dropdowns/mobile nav) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmxc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  
+  <!-- Your custom script -->
   <script src="js/app.js"></script>
 
 </body>
-
 </html>

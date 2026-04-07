@@ -245,3 +245,71 @@ textarea {
   }
 }
 
+
+/* In your style.css */
+.navbar-custom {
+  background-color: #3bb143; 
+  z-index: 1030; /* 1030 is Bootstrap's default sticky-top z-index */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Adds a nice shadow when scrolling */
+}
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+  color: white;
+}
+.navbar-custom .nav-link:hover {
+  color: #e0e0e0;
+}
+
+/* Hero Section */
+.hero-section {
+  /* Replace 'hero-bg.jpg' with your actual Palawan/El Nido image */
+  background: url('assets/hero-bg.jpg') no-repeat center center;
+  background-size: cover;
+  height: 70vh;
+  position: relative;
+}
+/* Dark overlay to make the white text pop */
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  letter-spacing: 2px;
+}
+.hero-title {
+  font-weight: 700;
+  letter-spacing: 5px;
+}
+
+/* Map Section Background */
+.map-section {
+  background-color: #3ab1c8; /* Matches the light blue ocean background */
+  padding: 5rem 0;
+}
+
+/* Interactive SVG Map Styling */
+.map-region path {
+  transition: fill 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+  stroke: rgba(255, 255, 255, 0.5); /* Adds the white outline/glow effect */
+  stroke-width: 8px;
+}
+
+.map-region text {
+  font-family: sans-serif;
+  pointer-events: none; /* Prevents text from interfering with hovering over the shape */
+}
+
+/* Hover effects for the specific island groups */
+.region-luzon path { fill: #8cc63f; }
+.region-luzon:hover path { fill: #a2db55; filter: drop-shadow(0 0 10px rgba(255,255,255,0.8)); }
+
+.region-visayas path { fill: #fbb03b; }
+.region-visayas:hover path { fill: #ffc460; filter: drop-shadow(0 0 10px rgba(255,255,255,0.8)); }
+
+.region-mindanao path { fill: #e03a11; }
+.region-mindanao:hover path { fill: #f35732; filter: drop-shadow(0 0 10px rgba(255,255,255,0.8)); }
