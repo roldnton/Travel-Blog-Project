@@ -262,13 +262,13 @@ textarea {
 
 /* Hero Section */
 .hero-section {
-  /* Replace 'hero-bg.jpg' with your actual Palawan/El Nido image */
-  background: url('assets/hero-bg.jpg') no-repeat center center;
+  background: url('../img/Palawan.jpg') no-repeat center center;
   background-size: cover;
   height: 80vh;
   position: relative;
+  
+  transition: background-image 1.5s ease-in-out;
 }
-/* Dark overlay to make the white text pop */
 .hero-overlay {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -287,24 +287,34 @@ textarea {
 
 /* Map Section Background */
 .map-section {
-  background-color: #3ab1c8; /* Matches the light blue ocean background */
+  background-color: #3ab1c8; 
   padding: 5rem 0;
 }
 
-/* Interactive SVG Map Styling */
+/* SVG Map Styling */
 .map-region path {
-  transition: fill 0.3s ease, filter 0.3s ease;
+  transition: all 0.3s ease;
   cursor: pointer;
-  stroke: rgba(255, 255, 255, 0.5); /* Adds the white outline/glow effect */
+  stroke: rgba(255, 255, 255, 0.5); 
   stroke-width: 8px;
+  filter: drop-shadow(5px 10px 10px rgba(0, 0, 0, 0.2)); 
 }
 
 .map-region text {
   font-family: sans-serif;
-  pointer-events: none; /* Prevents text from interfering with hovering over the shape */
+  pointer-events: none; 
 }
 
+.map-region:hover {
+  transform: scale(1.02);
+  transform-origin: center; 
+}
 /* Hover effects for the specific island groups */
+.region-bg path { fill:#b3d4fc;
+  cursor: pointer;
+  stroke: rgba(255, 255, 255, 0.5); 
+  stroke-width: 8px;
+  filter: drop-shadow(5px 10px 10px rgba(0, 0, 0, 0.2)); }
 .region-luzon path { fill: #8cc63f; }
 .region-luzon:hover path { fill: #a2db55; filter: drop-shadow(0 0 10px rgba(255,255,255,0.8)); }
 

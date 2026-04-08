@@ -19,7 +19,6 @@
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#4CAF50">
 
-  <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -37,11 +36,11 @@
       
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-semibold">
-          <li class="nav-item"><a class="nav-link px-3" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link px-3" href="luzon/luzon.html">Luzon</a></li>
-          <li class="nav-item"><a class="nav-link px-3" href="visayas/visayas.html">Visayas</a></li>
-          <li class="nav-item"><a class="nav-link px-3" href="mindanao/mindanao.html">Mindanao</a></li>
-          <li class="nav-item"><a class="nav-link px-3" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link text-white fw-bold" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="luzon/luzon.html">Luzon</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="visayas/visayas.html">Visayas</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="mindanao/mindanao.html">Mindanao</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="events.html">Events</a></li>
         </ul>
       </div>
     </div>
@@ -71,7 +70,16 @@
           
           <!-- SVG MAP CONTAINER -->
           <!-- Replace the dummy <path> tags below with a real SVG path of the Philippines -->
-          <svg viewBox="0 0 1050 1550" class="w-100 h-auto d-block mx-auto" fill="none" xmlns="http://www.w3.org/2000/svg" style="max-width: 800px;">
+<!-- Changed viewBox from "0 0 1050 1550" to "-50 -50 1150 1650" -->
+          <svg viewBox="-50 -50 1150 1650" class="w-100 h-auto d-block mx-auto" fill="none" xmlns="http://www.w3.org/2000/svg" style="max-width: 800px;">                        <!-- LUZON (Clickable Group) -->
+            <a class="region-bg">
+              <!-- Moved Luzon slightly right and down to give it breathing room -->
+              <g transform="translate(-40,30)">
+              <path d="M388.573 39.0215L364.073 134.021L380.573 170.521L367.573 178.021L349.573 209.021L337.573 245.521H313.073L281.073 293.021L313.073 389.021L296.573 444.521L317.573 477.521L370.573 512.021L375.073 568.021L349.573 590.521V643.521L367.573 671.021H349.573L309.073 697.521V733.021L296.573 751.521V777.021L237.073 810.021V845.521L214.073 862.021V887.521L185.073 909.521L178.573 935.021L144.073 948.521L126.573 982.521L100.073 992.521L41.5725 1070.02L0.572502 1094.02L22.5725 1186.02H61.5725L162.073 1119.52L177.573 1076.52L237.073 1042.02V992.521H278.073L360.573 940.521L375.073 887.521L349.573 853.521V803.521L383.073 821.021L413.573 810.021L425.073 767.021L446.073 777.021H465.573L492.073 767.021L514.573 794.521V836.521L492.073 897.521L534.073 948.521H553.073V966.021L562.073 1033.52L605.073 1070.02L587.073 1094.02V1119.52H573.073L504.573 1220.02V1270.02L479.073 1289.52L499.073 1346.02L534.073 1376.02L587.073 1359.52L613.573 1331.52L618.073 1283.02L643.573 1289.52L682.073 1267.52L693.573 1241.02L724.073 1232.02V1327.52L770.573 1412.52L834.573 1419.02L852.573 1442.02L904.573 1463.02L967.573 1419.02V1359.52H1013.57L1066.57 1232.02L1059.07 1187.02L1041.57 1169.52L1034.57 1107.52L1023.57 1076.52L998.073 1060.02L1008.07 1042.02L983.073 992.521L998.073 966.021V915.021L1008.07 887.521L973.073 845.521H955.073L935.073 853.521L923.073 845.521L935.073 810.021L917.573 759.521V674.521L851.573 633.521L820.573 635.521L838.073 620.021L857.073 567.021L843.573 536.021L838.073 503.021L771.573 477.521L742.073 491.021L727.573 517.521L695.573 491.021L629.073 459.021L590.573 455.521V401.521L574.073 383.521L547.573 377.021V329.521L574.073 323.021L623.573 260.021V150.521L609.573 107.521V59.0215L574.073 30.0215H524.073L476.573 0.521484L426.073 8.02148L388.573 39.0215Z" stroke="black"/>
+
+                <text x="-200" y="300" fill="white" font-size="40" font-weight="bold">LUZON</text>
+              </g>
+            </a>            
             
             <!-- LUZON (Clickable Group) -->
             <a href="luzon/luzon.html" class="map-region region-luzon">
@@ -107,7 +115,7 @@
             <!-- MINDANAO (Clickable Group) -->
             <a href="mindanao/mindanao.html" class="map-region region-mindanao">
               <!-- Pushed down by 1050 pixels to sit at the bottom -->
-              <g transform="translate(500, 1050)">
+              <g transform="translate(475, 1000)">
                 <path d="M198.193 97L246.193 155.5H262.193V97L290.693 70L310.193 97L331.693 70L352.193 61.5L367.693 76L370.693 0.5H404.693L416.193 34.5L442.193 20L462.693 70L444.693 97L466.693 114.5H484.193L495.693 140V205L516.193 220L523.193 261.5L488.193 354H451.193V295.5C445.36 287.167 434.093 270.9 435.693 272.5C437.293 274.1 425.36 297.5 419.193 309L398.193 334L424.193 338.5V434L386.193 455L354.193 440.5V415.5L272.693 409C264.027 391.5 246.693 356 246.693 354C246.693 352 246.693 282.5 246.693 248L211.693 216.5L199.193 228.5L165.193 237.5L144.193 228.5L150.693 261.5L128.693 282.5L107.693 237.5H91.1934L70.1934 356.5L29.6934 370L0.693359 326.5L26.1934 309.5V248L79.1934 170L107.693 167.5V131H144.193L198.193 97Z" stroke="black"/>
                 <!-- Text adjusted for Mindanao -->
                 <text x="-300" y="250" fill="white" font-size="40" font-weight="bold">MINDANAO</text>
