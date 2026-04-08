@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const heroSection = document.querySelector('.hero-section');
   
   const bgImages = [
-    'img/Baguio.jpg',
+    'img/baguio.jpg',
     'img/Boracay.png',
     'img/Zambales.jpg',
     'img/Malapascua.jpg',

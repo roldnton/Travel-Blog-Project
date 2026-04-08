@@ -260,9 +260,33 @@ textarea {
   color: #e0e0e0;
 }
 
+.navbar-custom {
+  min-height: 72px;
+}
+.navbar-custom .navbar-brand {
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+.navbar-custom .navbar-nav {
+  align-items: center;
+}
+.navbar-custom .nav-link {
+  color: #fff;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  font-weight: 600;
+}
+.navbar-custom .nav-link.active {
+  color: #fff !important;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.28em;
+  text-decoration-thickness: 2px;
+}
+
 /* Hero Section */
 .hero-section {
-  background: url('../img/Palawan.jpg') no-repeat center center;
+  background: url('../img/palawan.jpg') no-repeat center center;
   background-size: cover;
   height: 80vh;
   position: relative;
@@ -329,7 +353,7 @@ textarea {
   min-height: 62vh;
   background:
     linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.35)),
-    url('../luzon/img/baguio.jpg') no-repeat center center;
+    url('../img/baguio.jpg') no-repeat center center;
   background-size: cover;
 }
 

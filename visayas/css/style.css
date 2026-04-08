@@ -46,7 +46,42 @@ button:focus-visible {
 
 /* --- Navigation --- */
 .custom-navbar {
-  background-color: var(--brandvisayas);
+  background-color: #3bb143;
+  z-index: 1030;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  min-height: 72px;
+}
+
+.custom-navbar .navbar-brand,
+.custom-navbar .nav-link {
+  color: #fff !important;
+}
+
+.custom-navbar .navbar-brand {
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+
+.custom-navbar .navbar-nav {
+  align-items: center;
+}
+
+.custom-navbar .nav-link {
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  font-weight: 600;
+}
+
+.custom-navbar .nav-link:hover {
+  color: #e0e0e0 !important;
+}
+
+.custom-navbar .nav-link.active {
+  color: #fff !important;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.28em;
+  text-decoration-thickness: 2px;
 }
 
 .custom-navbar .navbar-toggler {
@@ -79,7 +114,7 @@ button:focus-visible {
 }
 
 .custom-btn {
-  background-color: var(--brandvisayas);
+  background-color: #3bb143;
   color: var(--defaultwhite);
   padding: 12px 32px;
   border-radius: 6px;
