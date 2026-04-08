@@ -323,3 +323,99 @@ textarea {
 
 .region-mindanao path { fill: #e03a11; }
 .region-mindanao:hover path { fill: #f35732; filter: drop-shadow(0 0 10px rgba(255,255,255,0.8)); }
+
+/* Festivals page */
+.festival-hero {
+  min-height: 62vh;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.35)),
+    url('../luzon/img/baguio.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.festival-kicker {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.festival-tags .badge {
+  padding: 0.7rem 1rem;
+  font-weight: 600;
+}
+
+.festival-section {
+  background: #f7fbf8;
+}
+
+.festival-section-alt {
+  background: #eef7f1;
+}
+
+.festival-card {
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.festival-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.12) !important;
+}
+
+.festival-card-img {
+  height: 240px;
+  object-fit: cover;
+}
+
+.festival-region {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.festival-region-luzon { background: #3A93ED; }
+.festival-region-visayas { background: #d49113; }
+.festival-region-mindanao { background: #d65732; }
+
+.festival-list li {
+  margin-bottom: 0.85rem;
+  color: #4b5563;
+}
+
+.festival-info-box {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.mini-festival-card {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.9rem;
+  padding: 1.1rem;
+}
+
+@media (max-width: 767.98px) {
+  .festival-hero {
+    min-height: 52vh;
+  }
+
+  .festival-card-img {
+    height: 210px;
+  }
+
+  .festival-info-box {
+    padding: 1.35rem;
+  }
+}
