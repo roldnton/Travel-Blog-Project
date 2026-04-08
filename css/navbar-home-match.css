@@ -1,0 +1,61 @@
+/* Force island-page navbars to match the Home/Festivals navbar exactly */
+.navbar.navbar-custom {
+  background-color: #3bb143 !important;
+  min-height: 72px !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15) !important;
+  z-index: 1030 !important;
+  font-family: var(--bs-body-font-family), system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.navbar.navbar-custom .container {
+  max-width: 1320px;
+}
+
+.navbar.navbar-custom .navbar-brand {
+  color: #fff !important;
+  font-size: 1.1rem !important;
+  line-height: 1.2 !important;
+  font-weight: 700 !important;
+  font-family: inherit !important;
+  letter-spacing: 0 !important;
+}
+
+.navbar.navbar-custom .navbar-nav {
+  align-items: center !important;
+}
+
+.navbar.navbar-custom .navbar-nav.small {
+  font-size: 0.875rem !important;
+}
+
+.navbar.navbar-custom .nav-link {
+  color: #fff !important;
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
+  font-weight: 600 !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  font-family: inherit !important;
+  letter-spacing: 0 !important;
+}
+
+.navbar.navbar-custom .nav-link:hover {
+  color: #e0e0e0 !important;
+}
+
+.navbar.navbar-custom .nav-link.active {
+  color: #fff !important;
+  font-size: 0.875rem !important;
+  font-weight: 700 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 0.28em !important;
+  text-decoration-thickness: 2px !important;
+}
+
+.navbar.navbar-custom .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.navbar.navbar-custom .navbar-toggler-icon {
+  filter: invert(1);
+}
