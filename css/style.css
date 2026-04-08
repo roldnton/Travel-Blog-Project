@@ -265,7 +265,7 @@ textarea {
   /* Replace 'hero-bg.jpg' with your actual Palawan/El Nido image */
   background: url('assets/hero-bg.jpg') no-repeat center center;
   background-size: cover;
-  height: 70vh;
+  height: 80vh;
   position: relative;
 }
 /* Dark overlay to make the white text pop */
