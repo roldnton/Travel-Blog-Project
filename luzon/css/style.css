@@ -10,6 +10,20 @@
   --neutral-900: #171717;
   --gray-300: #dee2e6;
   --gray-900: #212529;
+
+  --bg-color: #fafafa;
+  --text-color: #212529;
+  --card-bg: #ffffff;
+  --card-text: #6c757d;
+  --section-bg: #ffffff;
+}
+
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --card-bg: #1e1e1e;
+  --card-text: #cfcfcf;
+  --section-bg: #181818;
 }
 
 /* =========================================
@@ -28,7 +42,12 @@ html {
 body {
   margin: 0;
   font-family: "Inter", Helvetica, sans-serif;
-  background-color: #fafafa;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+body.dark-mode .custom-navbar {
+  background-color: #1f1f1f;
 }
 
 a {
@@ -38,6 +57,10 @@ a {
 button:focus-visible {
   outline: 2px solid #3A93ED !important;
   outline-offset: 2px !important;
+}
+
+body, .card, .custom-navbar, section {
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* =========================================
@@ -89,11 +112,43 @@ button:focus-visible {
   filter: invert(1);
 }
 
+section {
+  background-color: transparent;
+}
+
+body.dark-mode section {
+  background-color: var(--section-bg);
+}
+
+body.dark-mode .text-dark {
+  color: #ffffff !important;
+}
+
+body.dark-mode .text-secondary {
+  color: #cfcfcf !important;
+}
+
+body.dark-mode .navbar-custom,
+body.dark-mode .custom-navbar {
+  background-color: #1f1f1f !important;
+}
+
+body.dark-mode .navbar-custom .nav-link,
+body.dark-mode .navbar-custom .navbar-brand,
+body.dark-mode .custom-navbar .nav-link,
+body.dark-mode .custom-navbar .navbar-brand {
+  color: #ffffff !important;
+}
+
+body.dark-mode #themeToggle {
+  color: #fff;
+  border-color: #fff;
+}
+
 /* --- Hero Section --- */
-/* Hero Section - Fixed (no more Palawan overlay) */
 .hero-section {
   height: 600px;
-  background-image: none !important;   /* removes the unwanted Palawan background */
+  background-image: none !important;
   background-color: #333;
   overflow: hidden;
   position: relative;
@@ -102,8 +157,12 @@ button:focus-visible {
 .hero-image {
   height: 100%;
   object-fit: cover;
-  opacity: 1 !important;               /* full opacity, no see-through */
-  filter: brightness(75%);             /* you can tweak this if you want it brighter/darker */
+  opacity: 1 !important;
+  filter: brightness(75%);
+}
+
+body.dark-mode .hero-image {
+  filter: brightness(60%);
 }
 
 .go-back-icon {
@@ -147,6 +206,10 @@ button:focus-visible {
   backdrop-filter: blur(4px); 
 }
 
+body.dark-mode .custom-carousel-caption {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
 /* --- Cards --- */
 .custom-card-img {
   height: 220px;
@@ -155,6 +218,9 @@ button:focus-visible {
 
 .card {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: none;
 }
 
 .card:hover {
@@ -165,4 +231,17 @@ button:focus-visible {
 .info-text {
   font-size: 1.1rem;
   text-align: justify;
+  color: var(--card-text);
+}
+
+.card-text {
+  color: var(--card-text);
+}
+
+.card-title {
+  color: var(--text-color);
+}
+
+body.dark-mode .card:hover {
+  box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.6)!important;
 }

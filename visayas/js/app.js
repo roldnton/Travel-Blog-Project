@@ -15,4 +15,28 @@ document.addEventListener("DOMContentLoaded", () => {
         // Apply the blur to the image
         heroImage.style.filter = `blur(${blurValue}px)`; 
     });    
+
+     const toggleBtn = document.getElementById("themeToggle");
+
+     // Load saved theme
+     if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+      }
+
+    toggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        // Save preference
+        if (document.body.classList.contains("dark-mode")) {
+            localStorage.setItem("theme", "dark");
+            toggleBtn.textContent = "☀️";
+        } else {
+            localStorage.setItem("theme", "light");
+            toggleBtn.textContent = "🌙";
+        }
+
+    });
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+        toggleBtn.textContent = "☀️";
+      }
 });

@@ -311,7 +311,7 @@ textarea {
 
 /* Map Section Background */
 .map-section {
-  background-color: #3ab1c8; 
+  background-color: var(--map-bg);
   padding: 5rem 0;
 }
 
@@ -376,27 +376,45 @@ textarea {
 }
 
 .festival-section {
-  background: #f7fbf8;
+  background: var(--section-bg);
 }
 
 .festival-section-alt {
-  background: #eef7f1;
+  background: var(--section-alt-bg);
 }
 
 .festival-card {
   border-radius: 1rem;
   overflow: hidden;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background: var(--card-bg);
+  color: var(--text-color);
+}
+
+body.dark-mode .festival-card {
+  border: 1px solid #333;
+}
+
+.festival-card .card-body {
+  color: var(--text-color);
 }
 
 .festival-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.25) !important;
+}
+
+body.dark-mode .festival-card:hover {
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.6) !important;
 }
 
 .festival-card-img {
   height: 240px;
   object-fit: cover;
+}
+
+body.dark-mode .festival-card-img {
+  filter: brightness(0.85) contrast(1.1);
 }
 
 .festival-region {
@@ -412,20 +430,26 @@ textarea {
 .festival-region-visayas { background: #d49113; }
 .festival-region-mindanao { background: #d65732; }
 
+body.dark-mode .festival-region-luzon { background: #2f6fc2; }
+body.dark-mode .festival-region-visayas { background: #b37a10; }
+body.dark-mode .festival-region-mindanao { background: #a63d1f; }
+
 .festival-list li {
   margin-bottom: 0.85rem;
   color: #4b5563;
 }
 
 .festival-info-box {
-  background: #fff;
+  background: var(--card-bg);
+  color: var(--text-color);
   border-radius: 1rem;
   padding: 2rem;
 }
 
 .mini-festival-card {
-  background: #f8fafc;
-  border: 1px solid #e5e7eb;
+  background: var(--card-bg);
+  border: 1px solid #444;
+  color: var(--text-color);
   border-radius: 0.9rem;
   padding: 1.1rem;
 }
@@ -442,4 +466,63 @@ textarea {
   .festival-info-box {
     padding: 1.35rem;
   }
+}
+
+/* Default (Light Mode) */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --navbar-bg: #3bb143;
+  --section-bg: #f7fbf8;
+  --section-alt-bg: #eef7f1;
+  --card-bg: #ffffff;
+  --map-bg: #3ab1c8;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --navbar-bg: #1f1f1f;
+  --section-bg: #1a1a1a;
+  --section-alt-bg: #222222;
+  --card-bg: #2a2a2a;
+  --map-bg: #1c2b2e;
+}
+
+/* Apply variables */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.navbar-custom {
+  background-color: var(--navbar-bg);
+}
+
+body.dark-mode .navbar-custom .nav-link,
+body.dark-mode .navbar-custom .navbar-brand {
+  color: #ffffff;
+}
+
+body.dark-mode .hero-overlay {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode .map-region text {
+  fill: #ffffff;
+}
+
+body, 
+.navbar-custom, 
+.map-section, 
+.festival-section, 
+.festival-section-alt, 
+.festival-info-box {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.festival-card,
+.festival-card-img,
+.festival-region {
+  transition: all 0.3s ease;
 }
